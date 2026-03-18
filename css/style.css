@@ -3,7 +3,6 @@
 background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/1d/63/22/ze-do-pernil-lanche-delicioso.jpg?w=900&h=500&s=1');
 background-size: cover;
 background-position: center;
-background-attachment: fixed;       
 height: 100vh;
 
 display: flex;
