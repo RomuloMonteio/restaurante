@@ -79,7 +79,8 @@ background:#c1121f;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 60vh;
+    height: 100%;
+
     width: 100%;
     background-position: center;
     
@@ -92,7 +93,7 @@ background:#c1121f;
     height: 100%;
 
     background: rgba(0, 0, 0, 0.788); /* intensidade do escuro */
-    
+    padding: 5%;
 
     display: flex;
     flex-direction: column;
