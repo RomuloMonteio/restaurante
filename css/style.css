@@ -3,7 +3,7 @@
 background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/1d/63/22/ze-do-pernil-lanche-delicioso.jpg?w=900&h=500&s=1');
 background-size: cover;
 background-position: center;
-
+background-attachment: fixed;       
 height: 100vh;
 
 display: flex;
@@ -26,6 +26,7 @@ justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .btm-vercardapio-lojas a
 {
@@ -34,7 +35,13 @@ justify-content: center;
     border-color:black ;
 }
 
-
+.restaurantes{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0px;
+    justify-content: center;
+}
 /*Cardapio*/
 .menu-card{
 
@@ -64,4 +71,39 @@ background:#c1121f;
 }
 
 
-/**/
+/*sobre nos inicial*/
+#sobre-nos{
+    background-image: url('https://img3.restaurantguru.com/w550/h367/r231-design-Ze-do-Pernil-Aveiro.jpg');
+    
+    color: aliceblue;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 60vh;
+    width: 100%;
+    background-position: center;
+    
+}
+
+
+/* overlay preto */
+#sobre-nos .fundo {
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.788); /* intensidade do escuro */
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  
+}
+
+p.sobre-nos
+{
+    font-size: 20px;
+    padding: 4%;
+}

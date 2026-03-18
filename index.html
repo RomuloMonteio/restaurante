@@ -1,250 +1,271 @@
-<!DOCTYPE html>
-<html lang="pt">
+        <!DOCTYPE html>
+        <html lang="pt">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Zé do Pernil</title>
+            <title>Zé do Pernil</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/style.css">
 
-</head>
+        </head>
 
-<body>
+        <body>
 
-    <!-- NAVBAR -->
+            <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
 
-            <a class="navbar-brand" href="#">Zé do Pernil</a>
+                    <a class="navbar-brand" href="#">Zé do Pernil</a>
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-            <div class="collapse navbar-collapse" id="menu">
+                    <div class="collapse navbar-collapse" id="menu">
 
-                <ul class="navbar-nav ms-auto">
+                        <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="cardapio.html">Cardápio</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cardapio.html">Cardápio</a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="encomenda.html">Encomendar</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="encomenda.html">Encomendar</a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacto.html">Contacto</a>
+                            </li>
 
-                </ul>
-<div class="d-flex align-items-center ms-lg-3 py-2">
-    <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
-        <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
-        <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
-        <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
-        <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
-    </a>
+                        </ul>
+        <div class="d-flex align-items-center ms-lg-3 py-2">
+            <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+                <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+            </a>
+            <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+                <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+            </a>
+            <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+                <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+            </a>
+            <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+                <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+            </a>
+        </div>
+
+        <div id="google_translate_element" style="display:none"></div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!-- HERO -->
+
+            <section class="hero">
+                <div id="fundo">
+                    <div class="container text-center text-white">
+
+                        <h1>O melhor Pernil de Portugal</h1>
+
+                        <p>Tradição, sabor e qualidade</p>
+
+                        <a href="cardapio.html" class="btn btn-warning btn-lg">
+                            Ver Cardápio
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- RESTAURANTES -->
+
+            <section class="restaurantes container mt-5">
+
+                <h2 class="text-center mb-4">Os nossos Restaurantes</h2>
+
+                <div class=" row">
+
+                    <div class="col-md-4">
+                        <div class="card">
+
+                            <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no"
+                                class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Aveiro</h5>
+                                <p>Visite o nosso restaurante em Aveiro</p>
+                                <div class="btm-vercardapio-lojas">
+                                    <a href="cardapio.html" class="btn btn-warning btn-lg">
+                            Ver Cardápio
+                        </a>
+                                </div>
+                        </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-md-4">
+                        <div class="card">
+
+                            <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Coimbra</h5>
+                                <p>Visite o nosso restaurante em Coimbra</p>
+                                <div class="btm-vercardapio-lojas">
+                                    <a href="cardapio.html" class="btn btn-warning btn-lg">
+                            Ver Cardápio
+                        </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card">
+
+                            <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
+
+                            <div class="card-body">
+
+                                <h5>Viseu</h5>
+                                <p>Visite o nosso restaurante em Viseu</p>
+                                <div class="btm-vercardapio-lojas">
+                                    <a href="cardapio.html" class="btn btn-warning btn-lg">
+                            Ver Cardápio
+                        </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+            </section>
+
+<div id="sobre-nos">
+    <div  class="fundo container-fluid mt-5">
+            <h2 class="text-center">Sobre Nós</h2>
+            <p class="sobre-nos text-center">
+No Zé do Pernil, somos apaixonados pela tradição e pelos sabores autênticos da gastronomia portuguesa. Especializamo-nos na preparação de pernil suculento e leitão crocante, receitas que carregam história, dedicação e um sabor inconfundível.
+
+A nossa jornada começou com o objetivo de levar à mesa dos nossos clientes o verdadeiro gosto da comida tradicional, preparada com técnicas artesanais e ingredientes de qualidade. Ao longo do tempo, fomos conquistando clientes e crescendo, sempre mantendo o compromisso com a excelência e o sabor.
+
+Hoje, contamos com três restaurantes, localizados em Viseu, Aveiro e Coimbra, onde diariamente servimos refeições que combinam tradição e paixão pela boa comida. Cada prato é preparado com cuidado, respeitando as receitas que passam de geração em geração.
+
+Mais do que um restaurante, o Zé do Pernil é um espaço onde a tradição se encontra com o convívio, proporcionando momentos únicos à volta de uma boa refeição.
+
+Venha visitar-nos e descobrir o verdadeiro sabor do pernil e do leitão português!
+</p>
+    </div>
 </div>
 
-<div id="google_translate_element" style="display:none"></div>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-        <div id="fundo">
-            <div class="container text-center text-white">
-
-                <h1>O melhor Pernil de Portugal</h1>
-
-                <p>Tradição, sabor e qualidade</p>
-
-                <a href="cardapio.html" class="btn btn-warning btn-lg">
-                    Ver Cardápio
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- RESTAURANTES -->
-
-    <section class="container mt-5">
-
-        <h2 class="text-center mb-4">Os nossos Restaurantes</h2>
-
-        <div class="row">
-
-            <div class="col-md-4">
-                <div class="card">
-
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no"
-                        class="card-img-top">
-
-                    <div class="card-body">
-
-                        <h5>Aveiro</h5>
-                        <p>Visite o nosso restaurante em Aveiro</p>
-                        <div class="btm-vercardapio-lojas">
-                            <a href="cardapio.html" class="btn btn-warning btn-lg">
-                    Ver Cardápio
-                </a>
+        <!--Rodape -->
+        <footer class="bg-dark text-white pt-5 pb-3 ">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
+                        <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt" 
+                                style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
                         </div>
-                </a>
-
+                        <small class="text-muted d-block mt-2 text-center italic">Visite a nossa loja mais próxima</small>
                     </div>
-                </div>
-            </div>
 
+                    <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4">
+                        <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
+                        
+                        
+                        <div class="">
+                            <strong class="text-white">📍 Viseu</strong><br>
+                            <span class="small text-light">Rua Formosa, nº 45<br>3500-135 Viseu</span>
+                        </div>
 
-            <div class="col-md-4">
-                <div class="card">
-
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
-
-                    <div class="card-body">
-
-                        <h5>Coimbra</h5>
-                        <p>Visite o nosso restaurante em Coimbra</p>
-                        <div class="btm-vercardapio-lojas">
-                            <a href="cardapio.html" class="btn btn-warning btn-lg">
-                    Ver Cardápio
-                </a>
+                        <div class="mb-3">
+                            <strong class="text-white">📍 Aveiro</strong><br>
+                            <span class="small text-light">Rua da Pega, Edifício UA<br>3810-193 Aveiro</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="text-white">📍 Coimbra</strong><br>
+                            <span class="small text-light">Largo da Portagem, nº 12<br>3000-337 Coimbra</span>
                         </div>
                     </div>
-                </div>
-            </div>
 
-
-            <div class="col-md-4">
-                <div class="card">
-
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
-
-                    <div class="card-body">
-
-                        <h5>Viseu</h5>
-                        <p>Visite o nosso restaurante em Viseu</p>
-                        <div class="btm-vercardapio-lojas">
-                            <a href="cardapio.html" class="btn btn-warning btn-lg">
-                    Ver Cardápio
-                </a>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
+                        <p class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i> +351 234 123 456</p>
+                        <p class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> geral@zedopernil.pt</p>
+                        <p class="mb-3"><i class="bi bi-whatsapp text-warning me-2"></i> +351 912 345 678</p>
+                        
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-outline-warning btn-sm me-2"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-warning btn-sm"><i class="bi bi-instagram"></i></a>
                         </div>
                     </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
+                        <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
+                        <p class="mb-1 fw-bold">Segunda a Domingo</p>
+                        <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
+                        <hr class="border-warning w-25 mx-auto mx-md-0">
+                        <p class="small text-muted">Aberto ininterruptamente para o seu almoço e jantar.</p>
+                    </div>
+
+                </div>
+
+                <hr class="bg-secondary opacity-25">
+
+                <div class="text-center pt-2">
+                    <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
                 </div>
             </div>
+        </footer>
 
-        </div>
 
-    </section>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'pt',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
 
-<!--Rodape -->
-<footer class="bg-dark text-white pt-5 pb-3 mt-5">
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
-                <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt" 
-                        style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
-                <small class="text-muted d-block mt-2 text-center italic">Visite a nossa loja mais próxima</small>
-            </div>
+            function doGTranslate(lang_pair) {
+                if (lang_pair.value) lang_pair = lang_pair.value;
+                if (lang_pair == '') return;
+                var lang = lang_pair.split('|')[1];
+                var teCombo = document.querySelector('.goog-te-combo');
+                if (teCombo == null || teCombo.innerHTML == null) {
+                    setTimeout(function() { doGTranslate(lang_pair); }, 500);
+                } else {
+                    teCombo.value = lang;
+                    teCombo.dispatchEvent(new Event('change'));
+                }
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </body>
 
-            <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4">
-                <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
-                
-                
-                <div class="">
-                    <strong class="text-white">📍 Viseu</strong><br>
-                    <span class="small text-light">Rua Formosa, nº 45<br>3500-135 Viseu</span>
-                </div>
-
-                <div class="mb-3">
-                    <strong class="text-white">📍 Aveiro</strong><br>
-                    <span class="small text-light">Rua da Pega, Edifício UA<br>3810-193 Aveiro</span>
-                </div>
-                <div class="mb-3">
-                    <strong class="text-white">📍 Coimbra</strong><br>
-                    <span class="small text-light">Largo da Portagem, nº 12<br>3000-337 Coimbra</span>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
-                <p class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i> +351 234 123 456</p>
-                <p class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> geral@zedopernil.pt</p>
-                <p class="mb-3"><i class="bi bi-whatsapp text-warning me-2"></i> +351 912 345 678</p>
-                
-                <div class="mt-4">
-                    <a href="#" class="btn btn-outline-warning btn-sm me-2"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="btn btn-outline-warning btn-sm"><i class="bi bi-instagram"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
-                <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
-                <p class="mb-1 fw-bold">Segunda a Domingo</p>
-                <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
-                <hr class="border-warning w-25 mx-auto mx-md-0">
-                <p class="small text-muted">Aberto ininterruptamente para o seu almoço e jantar.</p>
-            </div>
-
-        </div>
-
-        <hr class="bg-secondary opacity-25">
-
-        <div class="text-center pt-2">
-            <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
-        </div>
-    </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'pt',
-            autoDisplay: false
-        }, 'google_translate_element');
-    }
-
-    function doGTranslate(lang_pair) {
-        if (lang_pair.value) lang_pair = lang_pair.value;
-        if (lang_pair == '') return;
-        var lang = lang_pair.split('|')[1];
-        var teCombo = document.querySelector('.goog-te-combo');
-        if (teCombo == null || teCombo.innerHTML == null) {
-            setTimeout(function() { doGTranslate(lang_pair); }, 500);
-        } else {
-            teCombo.value = lang;
-            teCombo.dispatchEvent(new Event('change'));
-        }
-    }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-
-</html>
+        </html>
