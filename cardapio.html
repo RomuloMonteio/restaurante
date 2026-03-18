@@ -48,7 +48,22 @@
                     </li>
 
                 </ul>
+<div class="d-flex align-items-center ms-lg-3 py-2">
+    <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+        <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+    </a>
+    <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+        <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+    </a>
+    <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+        <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+    </a>
+    <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+        <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+    </a>
+</div>
 
+<div id="google_translate_element" style="display:none"></div>
             </div>
         </div>
     </nav>
@@ -145,7 +160,7 @@
 <div class="col-md-3 col-sm-6">
 <div class="card menu-card"
      data-nome="Leitão ao Kilo"
-     data-preco="6.50€"
+     data-preco="34.00€"
      data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s"
      data-desc="Sandes tradicional de leitão assado com molho especial"
      data-bs-toggle="modal"
@@ -153,7 +168,7 @@
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s" class="card-img-top">
 <div class="card-body text-center">
 <h5>Leitão ao Kilo</h5>
-<p class="text-danger fw-bold">6.50€</p>
+<p class="text-danger fw-bold">34.00€</p>
 
 </div>
 </div>
@@ -367,6 +382,29 @@ cards.forEach(card => {
     });
 });
 </script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'pt',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == '') return;
+        var lang = lang_pair.split('|')[1];
+        var teCombo = document.querySelector('.goog-te-combo');
+        if (teCombo == null || teCombo.innerHTML == null) {
+            setTimeout(function() { doGTranslate(lang_pair); }, 500);
+        } else {
+            teCombo.value = lang;
+            teCombo.dispatchEvent(new Event('change'));
+        }
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
