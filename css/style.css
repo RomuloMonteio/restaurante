@@ -1,3 +1,49 @@
+/* RESET TOTAL */
+html,body{
+margin:0;
+padding:0;
+width:100%;
+max-width:100%;
+overflow-x:hidden;     /* impede scroll lateral */
+touch-action:pan-y;    /* só scroll vertical */
+}
+
+/* todas secções */
+section,
+div,
+header,
+nav,
+main,
+footer{
+max-width:100%;
+}
+
+/* imagens responsivas */
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* bootstrap rows às vezes causam overflow */
+.row{
+margin-left:0 !important;
+margin-right:0 !important;
+}
+
+/* evita elementos a sair do ecrã */
+.container,
+.container-fluid{
+overflow-x:hidden;
+}
+
+/* impede zoom automático em inputs iPhone */
+input,
+select,
+textarea{
+font-size:16px;
+}
+
 /*navbar*/
 .navbar{
 position:fixed;
@@ -213,3 +259,5 @@ p.sobre-nos
     font-size: 20px;
     padding: 4%;
 }
+
+
