@@ -123,24 +123,10 @@ object-fit:cover;
 /* mobile menu */
 @media(max-width:991px){
 
-.navbar .container{
-padding:14px 18px;
-}
+    .navbar .container{
+        margin: 0px 5%;
+    }
 
-.navbar-collapse{
-margin-top:15px;
-padding-top:10px;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-.navbar-nav .nav-link{
-margin:6px 0;
-}
-
-.d-flex.align-items-center{
-justify-content:center;
-margin-top:12px;
-}
 }
 
 /*Fim Nav Bar*/
