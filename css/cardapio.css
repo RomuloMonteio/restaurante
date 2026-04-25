@@ -1,0 +1,233 @@
+/* =====================================
+   CARDÁPIO PREMIUM LIQUID GLASS
+   ZÉ DO PERNIL
+===================================== */
+
+/* fundo geral */
+body{
+
+background:
+linear-gradient(135deg,#120804,#2b1308,#1a0c05);
+
+color:#fff;
+min-height:100vh;
+}
+
+/* titulo */
+h1{
+
+font-size:58px;
+font-weight:800;
+margin-top:120px;
+margin-bottom:40px !important;
+
+color:#fff5e8;
+text-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* =========================
+   PILLS CATEGORIAS
+========================= */
+
+.nav-pills{
+
+gap:12px;
+flex-wrap:wrap;
+}
+
+.nav-pills .nav-link{
+
+border:none;
+padding:14px 22px;
+border-radius:20px;
+
+font-weight:700;
+font-size:16px;
+
+color:#fff4e8;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s ease;
+}
+
+/* hover */
+.nav-pills .nav-link:hover{
+
+transform:translateY(-3px);
+
+background:rgba(255,255,255,.08);
+
+box-shadow:
+0 8px 18px rgba(0,0,0,.18);
+}
+
+/* ativo */
+.nav-pills .nav-link.active{
+
+background:
+linear-gradient(135deg,#8b2d04,#d18a1f);
+
+color:#fff !important;
+
+box-shadow:
+0 10px 22px rgba(209,138,31,.30);
+}
+
+/* =========================
+   CARDS MENU
+========================= */
+
+.menu-card{
+
+cursor:pointer;
+
+height:100%;
+
+border:none;
+border-radius:26px;
+overflow:hidden;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.22),
+inset 0 1px 1px rgba(255,255,255,.08);
+
+transition:.35s ease;
+}
+
+/* hover */
+.menu-card:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.35),
+0 0 22px rgba(209,138,31,.12);
+}
+
+/* imagens todas iguais */
+.menu-card img{
+
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+/* texto */
+.menu-card .card-body{
+padding:22px;
+}
+
+.menu-card h5{
+
+font-size:22px;
+font-weight:700;
+
+color:#fff5e8;
+margin-bottom:12px;
+}
+
+.menu-card p{
+
+font-size:20px;
+margin:0;
+color:#ffbc67 !important;
+}
+
+/* =========================
+   MODAL PRODUTO
+========================= */
+
+.modal-content{
+
+border:none;
+border-radius:30px;
+
+background:rgba(28,14,8,.95);
+
+backdrop-filter:blur(18px);
+
+color:#fff;
+}
+
+.modal-header{
+
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.modal-footer,
+.modal-body{
+border:none;
+}
+
+#modalNome{
+font-weight:800;
+color:#fff4e8;
+}
+
+#modalPreco{
+color:#ffb347 !important;
+font-weight:800;
+}
+
+#modalDesc{
+color:rgba(255,240,220,.75);
+font-size:18px;
+}
+
+#modalImg{
+
+width:100%;
+border-radius:22px;
+object-fit:cover;
+}
+
+/* botão */
+.btn-success{
+
+border:none;
+padding:14px 26px;
+border-radius:18px;
+
+font-weight:700;
+
+background:
+linear-gradient(135deg,#8b2d04,#d18a1f);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+h1{
+font-size:38px;
+margin-top:100px;
+}
+
+.nav-pills .nav-link{
+padding:12px 18px;
+font-size:14px;
+}
+
+.menu-card img{
+height:200px;
+}
+
+.menu-card h5{
+font-size:19px;
+}
+}
