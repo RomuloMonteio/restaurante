@@ -11,6 +11,8 @@ linear-gradient(135deg,#120804,#2b1308,#1a0c05);
 
 color:#fff;
 min-height:100vh;
+height: 100%;
+padding-bottom: 50px;
 }
 
 /* titulo */
@@ -82,7 +84,24 @@ box-shadow:
 /* =========================
    CARDS MENU
 ========================= */
+.favorito-btn{
+padding:10px 18px;
+border:none;
+border-radius:12px;
+background:#ffffff15;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
 
+.favorito-btn:hover{
+transform:scale(1.05);
+background:#ff4d6d;
+}
+
+.favorito-btn.ativo{
+background:#ff4d6d;
+}
 .menu-card{
 
 cursor:pointer;
