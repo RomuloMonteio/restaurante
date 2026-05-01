@@ -1,15 +1,26 @@
+document.querySelectorAll('.favorito-btn').forEach(btn=>{
 
-document.querySelectorAll('.favorito-btn').forEach(btn=> {
+btn.addEventListener('click',()=>{
 
-    btn.addEventListener('click' , async function(){
-        let id = this.dataset.id;
+let id = btn.dataset.id;
 
-        this.classList.toggle('ativo');
+fetch('http://localhost:3000/favorito',{
 
-        await fetch('/favorito',{
-            method:'POST',
-            headers:{'Content.Type' : 'application/json'},
-            body: JSON.stringify({produto:id})
-        });
-    })
+method:'POST',
+headers:{
+'Content-Type':'application/json'
+},
+
+body: JSON.stringify({
+produto:id
 })
+
+})
+.then(r=>r.text())
+.then(data=>{
+alert("Favoritado!");
+});
+
+});
+
+});
