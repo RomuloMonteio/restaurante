@@ -1,40 +1,56 @@
+//Criar a conecao
+
+
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(cors);
 app.use(express.json());
 
-const db = mysql.createConnection({
-host:'localhost',
-user:'root',
-password:'',
-database:'restaurante'
+const db = mysql.createConnection(
+    {
+        host:'localhost',
+        user:'root',
+        password:'',
+        database:'restaurantes'
+
+    });
+
+db.connect(err=> {
+    if(err){
+        console.log('erro ao ligar a BD');
+    }else{
+        console.log('BD is running');
+    }
 });
 
-db.connect((err)=>{
-if(err){
-console.log("Erro BD");
-}else{
-console.log("Ligado ao MySQL");
-}
+
+//criar Encomenda
+app.post('/encomenda',(req,res)=>
+{
+    let {nome,produto,quantidade,data_entrega,hora_entrega} = req.body;
+
+    db.query("INSERT INTO encomendas VALUES (?,?,?,?,?)",[nome,produto,quantidade,data_entrega,hora_entrega]);
+
+    res.send("Encomenda Feita");
 });
 
-app.post('/favorito',(req,res)=>{
 
-let produto = req.body.produto;
+//VER encomenda
 
-db.query(
-'INSERT INTO favoritos(produto_id) VALUES (?)',
-[produto]
-);
-
-res.send("Guardado");
-
+app.get('/encomendas',(req,res)=>
+{
+    db.query("SELECT * FROM encomendas",(err,result)=>{
+        res.json(result);
+    });
 });
 
-app.listen(3000,()=>{
-console.log("Servidor rodando");
+
+//ligar
+app.listen(3000,()=>
+{
+    console.log("Servidor rodando")
 });
