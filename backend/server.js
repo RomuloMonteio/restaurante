@@ -1,13 +1,12 @@
 //Criar a conecao
 
-
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
 
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection(
@@ -33,15 +32,22 @@ app.post('/encomenda',(req,res)=>
 {
     let {nome,produto,quantidade,data_entrega,hora_entrega} = req.body;
 
-    db.query("INSERT INTO encomendas VALUES (?,?,?,?,?)",[nome,produto,quantidade,data_entrega,hora_entrega]);
+    db.query("INSERT INTO encomendas(nome,produto,quantidade,data_entrega,hora_entrega) VALUES (?,?,?,?,?)",[nome,produto,quantidade,data_entrega,hora_entrega],(err,result)=>
+    {
+        if(err){
+            console.log(err)
+            res.status(500).send("Erro");
+        }else{
+            res.send("Encomenda feita")
+        }
+    });
 
-    res.send("Encomenda Feita");
 });
 
 
 //VER encomenda
 
-app.get('/encomendas',(req,res)=>
+app.get('/encomenda',(req,res)=>
 {
     db.query("SELECT * FROM encomendas",(err,result)=>{
         res.json(result);

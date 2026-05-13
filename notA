@@ -1,0 +1,18 @@
+//1. Buscar os dados
+fetch('http://localhost:3000/encomendas')
+
+//////////////////////////////////
+
+//2. Converter para JSON
+.then(res => res.json())
+
+////////////////////////////////////
+
+//3. Usar os dados 
+.then(data => {
+    console.log(data); //ver no console
+})
+
+///////////////////////////////////
+
+
