@@ -670,3 +670,53 @@ line-height:1.7;
 font-size:19px;
 }
 }
+
+/* ===========================
+   ESTATÍSTICAS
+=========================== */
+
+.stats-section{
+padding:60px 0;
+background:linear-gradient(135deg,#120804,#1e0f06,#120804);
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.stat-card{
+padding:28px 18px;
+border-radius:22px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,.09);
+box-shadow:0 8px 25px rgba(0,0,0,.2),inset 0 1px 1px rgba(255,255,255,.06);
+transition:.35s ease;
+}
+
+.stat-card:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 35px rgba(0,0,0,.3),0 0 20px rgba(209,138,31,.12);
+}
+
+.stat-number{
+font-size:44px;
+font-weight:800;
+line-height:1;
+margin-bottom:8px;
+background:linear-gradient(135deg,#d18a1f,#ffd9a0);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+}
+
+.stat-label{
+font-size:13px;
+font-weight:600;
+color:rgba(255,240,220,.65);
+text-transform:uppercase;
+letter-spacing:.8px;
+}
+
+@media(max-width:768px){
+.stat-number{font-size:34px;}
+}

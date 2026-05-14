@@ -30,18 +30,21 @@ db.connect(err=> {
 //criar Encomenda
 app.post('/encomenda',(req,res)=>
 {
-    let {nome,produto,quantidade,data_entrega,hora_entrega} = req.body;
+    let {nome,telefone,produto,quantidade,restaurante,data_entrega,hora_entrega,descricao,valor_total} = req.body;
 
-    db.query("INSERT INTO encomendas(nome,produto,quantidade,data_entrega,hora_entrega) VALUES (?,?,?,?,?)",[nome,produto,quantidade,data_entrega,hora_entrega],(err,result)=>
-    {
-        if(err){
-            console.log(err)
-            res.status(500).send("Erro");
-        }else{
-            res.send("Encomenda feita")
+    db.query(
+        "INSERT INTO encomendas(nome,telefone,produto,quantidade,restaurante,data_entrega,hora_entrega,descricao,valor_total) VALUES (?,?,?,?,?,?,?,?,?)",
+        [nome,telefone||'',produto,quantidade||1,restaurante||'',data_entrega,hora_entrega,descricao||'',valor_total||0],
+        (err,result)=>
+        {
+            if(err){
+                console.log(err);
+                res.status(500).json({erro:'Erro ao guardar encomenda'});
+            }else{
+                res.json({mensagem:'Encomenda registada com sucesso', id: result.insertId});
+            }
         }
-    });
-
+    );
 });
 
 
@@ -55,8 +58,39 @@ app.get('/encomenda',(req,res)=>
 });
 
 
+//criar Reserva
+app.post('/reserva',(req,res)=>
+{
+    let {nome,contacto,data_reserva,hora_reserva,restaurante,num_pessoas,notas} = req.body;
+
+    db.query(
+        "INSERT INTO reservas(nome,contacto,data_reserva,hora_reserva,restaurante,num_pessoas,notas) VALUES (?,?,?,?,?,?,?)",
+        [nome,contacto,data_reserva,hora_reserva,restaurante,num_pessoas,notas||''],
+        (err,result)=>
+        {
+            if(err){
+                console.log(err);
+                res.status(500).json({erro:'Erro ao guardar reserva'});
+            }else{
+                res.json({mensagem:'Reserva registada com sucesso', id: result.insertId});
+            }
+        }
+    );
+});
+
+
+//VER reservas
+app.get('/reserva',(req,res)=>
+{
+    db.query("SELECT * FROM reservas ORDER BY data_reserva, hora_reserva",(err,result)=>{
+        if(err){ return res.status(500).json({erro:'Erro'}); }
+        res.json(result);
+    });
+});
+
+
 //ligar
 app.listen(3000,()=>
 {
-    console.log("Servidor rodando")
+    console.log("Servidor rodando");
 });

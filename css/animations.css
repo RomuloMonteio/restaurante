@@ -1,0 +1,395 @@
+/* ===========================
+   SISTEMA DE ANIMAÇÕES GLOBAL
+   Zé do Pernil
+=========================== */
+
+/* ---- KEYFRAMES BASE ---- */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---- HERO ANIMATIONS ---- */
+
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 10px 25px rgba(209,138,31,.35); }
+  50%       { box-shadow: 0 10px 40px rgba(209,138,31,.65), 0 0 60px rgba(209,138,31,.20); }
+}
+
+@keyframes heroBadgePop {
+  0%   { opacity: 0; transform: scale(0.7) translateY(-10px); }
+  70%  { transform: scale(1.08) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ---- GLASS SHIMMER ---- */
+
+@keyframes glassShimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
+  50%  { opacity: 0.4; }
+  100% { transform: translateX(200%) skewX(-15deg); opacity: 0; }
+}
+
+/* ---- NAVBAR ---- */
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- LOADING SCREEN ---- */
+
+@keyframes logoAppear {
+  0%   { opacity: 0; transform: scale(0.8) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes loadBarFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes loadingFadeOut {
+  from { opacity: 1; visibility: visible; }
+  to   { opacity: 0; visibility: hidden; }
+}
+
+/* ---- SPIN / CHECK ---- */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes checkDraw {
+  from { stroke-dashoffset: 50; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* ---- RIPPLE ---- */
+
+@keyframes rippleEffect {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ---- HEART BEAT ---- */
+
+@keyframes heartBeat {
+  0%   { transform: scale(1); }
+  14%  { transform: scale(1.3); }
+  28%  { transform: scale(1); }
+  42%  { transform: scale(1.2); }
+  70%  { transform: scale(1); }
+}
+
+/* ---- TOAST SLIDE ---- */
+
+@keyframes toastSlideIn {
+  from { opacity: 0; transform: translateX(100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toastSlideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(100px); }
+}
+
+/* ---- TIMELINE ---- */
+
+@keyframes timelineGrow {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+/* ---- SCROLL PROGRESS ---- */
+
+@keyframes progressReveal {
+  from { width: 0; }
+}
+
+/* =================================
+   CLASSES DE ANIMAÇÃO UTILITÁRIAS
+================================= */
+
+.anim-fade-in-up       { animation: fadeInUp .7s ease both; }
+.anim-fade-in-down     { animation: fadeInDown .6s ease both; }
+.anim-fade-in-left     { animation: fadeInLeft .7s ease both; }
+.anim-fade-in-right    { animation: fadeInRight .7s ease both; }
+.anim-fade-in          { animation: fadeIn .6s ease both; }
+.anim-scale-in         { animation: scaleIn .5s cubic-bezier(.34,1.56,.64,1) both; }
+.anim-float            { animation: floatPulse 5s ease-in-out infinite; }
+.anim-glow             { animation: glowPulse 2.5s ease-in-out infinite; }
+
+/* delays */
+.delay-1 { animation-delay: .10s; }
+.delay-2 { animation-delay: .20s; }
+.delay-3 { animation-delay: .30s; }
+.delay-4 { animation-delay: .45s; }
+.delay-5 { animation-delay: .60s; }
+.delay-6 { animation-delay: .75s; }
+
+/* =================================
+   NAVBAR ANIMADA
+================================= */
+
+.navbar {
+  animation: navSlideDown .5s ease both;
+}
+
+/* navbar shrink ao scroll */
+.navbar.scrolled .container {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  transition: padding .3s ease, box-shadow .3s ease;
+  box-shadow: 0 16px 45px rgba(0,0,0,.45), inset 0 1px 1px rgba(255,255,255,.14) !important;
+}
+
+/* link activo com underline animado */
+.navbar-nav .nav-link {
+  position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #8b2d04, #d18a1f);
+  animation: fadeIn .3s ease;
+}
+
+/* =================================
+   GLASS SHIMMER NOS CARDS
+================================= */
+
+.rest-card,
+.menu-card,
+.hero-glass,
+.sobre-glass,
+.form-glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.rest-card::after,
+.menu-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+  transform: translateX(-100%) skewX(-15deg);
+  pointer-events: none;
+}
+
+.rest-card:hover::after,
+.menu-card:hover::after {
+  animation: glassShimmer .65s ease;
+}
+
+/* =================================
+   SCROLL PROGRESS BAR
+================================= */
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b2d04, #d18a1f, #ffd9a0);
+  z-index: 9999;
+  width: 0%;
+  transition: width .1s linear;
+  box-shadow: 0 0 10px rgba(209,138,31,.6);
+}
+
+/* =================================
+   LOADING SCREEN
+================================= */
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: linear-gradient(135deg, #120804, #2b1308, #1a0c05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-logo {
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff6e9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: logoAppear .6s ease both;
+}
+
+.loading-logo span {
+  color: #d18a1f;
+}
+
+.loading-bar-wrap {
+  width: 220px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.1);
+  overflow: hidden;
+  animation: fadeIn .5s .3s ease both;
+}
+
+.loading-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #8b2d04, #d18a1f);
+  animation: loadBarFill 1s .4s ease both;
+  box-shadow: 0 0 12px rgba(209,138,31,.5);
+}
+
+/* =================================
+   PAGE TRANSITION OVERLAY
+================================= */
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 88888;
+  background: linear-gradient(135deg, #120804, #2b1308);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+#page-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* =================================
+   TOAST NOTIFICATIONS
+================================= */
+
+#toast-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 77777;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast-msg {
+  padding: 14px 22px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 8px 25px rgba(0,0,0,.3);
+  animation: toastSlideIn .35s ease both;
+  min-width: 220px;
+}
+
+.toast-msg.success {
+  background: rgba(34, 197, 94, .25);
+  border-color: rgba(34, 197, 94, .3);
+}
+
+.toast-msg.error {
+  background: rgba(239, 68, 68, .25);
+  border-color: rgba(239, 68, 68, .3);
+}
+
+.toast-msg.hiding {
+  animation: toastSlideOut .3s ease both;
+}
+
+/* =================================
+   AOS OVERRIDES
+================================= */
+
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* =================================
+   RIPPLE BUTTON
+================================= */
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  transform: scale(0);
+  animation: rippleEffect .5s linear;
+  pointer-events: none;
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  #loading-screen { display: none !important; }
+}

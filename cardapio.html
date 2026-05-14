@@ -1,410 +1,456 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Cardápio</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cardapio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cardápio — Zé do Pernil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/cardapio.css">
+    <style>
+        body { background: linear-gradient(135deg, #120804, #2b1308, #1a0c05); min-height: 100vh; }
+        .cardapio-hero {
+            padding: 150px 0 60px;
+            text-align: center;
+        }
+        .cardapio-hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: #fff5e8;
+            margin-bottom: 10px;
+        }
+        .cardapio-hero p {
+            font-size: 18px;
+            color: rgba(255,240,220,.65);
+        }
+        .cardapio-main { padding: 0 0 100px; }
+    </style>
 </head>
-
 <body>
 
-     <!-- NAVBAR -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-
-            <a class="navbar-brand" href="#">Zé do Pernil</a>
-
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="cardapio.html">Cardápio</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="encomenda.html">Encomendar</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-
-                </ul>
-<div class="d-flex align-items-center ms-lg-3 py-2">
-    <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
-        <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
-        <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
-        <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
-        <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
-    </a>
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-logo">Zé do <span>Pernil</span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
 </div>
 
-<div id="google_translate_element" style="display:none"></div>
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE TRANSITION -->
+<div id="page-transition"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Zé do Pernil</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="reservas.html">Reservar</a></li>
+                <li class="nav-item"><a class="nav-link" href="encomenda.html">Encomendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="d-flex align-items-center ms-lg-3 py-2">
+                <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+                    <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+                    <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+                    <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+                    <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+                </a>
+            </div>
+            <div id="google_translate_element" style="display:none"></div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO MINI -->
+<section class="cardapio-hero">
+    <span class="page-hero-badge anim-fade-in-down" style="display:inline-block;padding:10px 20px;border-radius:30px;font-size:14px;font-weight:700;color:#ffd9a0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);margin-bottom:18px;">🍖 Os Nossos Pratos</span>
+    <h1 class="anim-fade-in-up delay-1">Cardápio</h1>
+    <p class="anim-fade-in-up delay-2">Escolha o seu prato favorito e faça a sua reserva ou encomenda.</p>
+</section>
+
+
+<!-- MENU -->
+<div class="cardapio-main">
+<div class="container">
+
+    <!-- CATEGORIAS -->
+    <ul class="nav nav-pills justify-content-center mb-5 anim-fade-in-down delay-3">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#leitao">Leitão</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pernil">Pernil</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pregos">Pregos & Bifanas</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#bebidas">Bebidas</button>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+
+        <!-- LEITAO -->
+        <div class="tab-pane fade show active" id="leitao">
+            <div class="row g-4">
+
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card menu-card"
+                         data-nome="Sandes de Leitão" data-preco="5.70€"
+                         data-img="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg"
+                         data-desc="Sandes tradicional de leitão assado com molho especial da casa"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>Sandes de Leitão</h5>
+                            <p class="text-danger fw-bold">5.70€</p>
+                            <button class="favorito-btn" data-id="1">❤️ Favoritar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
+                    <div class="card menu-card"
+                         data-nome="Sandes Leitão c/Queijo da Serra" data-preco="6.70€"
+                         data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD56OJcnqjJYZgqw0osjJZZoEDtSnWdJWxg&s"
+                         data-desc="Sandes de leitão assado com queijo da serra derretido"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD56OJcnqjJYZgqw0osjJZZoEDtSnWdJWxg&s" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>Sandes Leitão c/Queijo da Serra</h5>
+                            <p class="text-danger fw-bold">6.70€</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
+                    <div class="card menu-card"
+                         data-nome="Prato de Leitão" data-preco="11.00€"
+                         data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s"
+                         data-desc="Prato generoso de leitão assado com acompanhamento"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>Prato de Leitão</h5>
+                            <p class="text-danger fw-bold">11.00€</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
+                    <div class="card menu-card"
+                         data-nome="Leitão ao Kilo" data-preco="34.00€"
+                         data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s"
+                         data-desc="Leitão assado vendido ao quilo, ideal para partilhar em família"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>Leitão ao Kilo</h5>
+                            <p class="text-danger fw-bold">34.00€</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </nav>
 
+        <!-- PERNIL -->
+        <div class="tab-pane fade" id="pernil">
+            <div class="row g-4">
 
-    <!--Menu-->
-<div class="container mt-5">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card menu-card"
+                         data-nome="Sandes de Pernil" data-preco="6.50€"
+                         data-img="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no"
+                         data-desc="Sandes de pernil suculento com tempero especial da casa"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" loading="lazy">
+                        <div class="card-body text-center"><h5>Sandes de Pernil</h5><p class="text-danger fw-bold">6.50€</p></div>
+                    </div>
+                </div>
 
-<h1 class="text-center mb-5">Cardápio</h1>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
+                    <div class="card menu-card"
+                         data-nome="Pernil com Queijo" data-preco="7.00€"
+                         data-img="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no"
+                         data-desc="Pernil suculento com queijo da serra fundido"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" loading="lazy">
+                        <div class="card-body text-center"><h5>Pernil com Queijo</h5><p class="text-danger fw-bold">7.00€</p></div>
+                    </div>
+                </div>
 
-<!-- CATEGORIAS -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
+                    <div class="card menu-card"
+                         data-nome="Pernil com Ovo e Presunto" data-preco="8.00€"
+                         data-img="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no"
+                         data-desc="Pernil com ovo estrelado e presunto serrano"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" loading="lazy">
+                        <div class="card-body text-center"><h5>Pernil com Ovo e Presunto</h5><p class="text-danger fw-bold">8.00€</p></div>
+                    </div>
+                </div>
 
-<ul class="nav nav-pills justify-content-center mb-4">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
+                    <div class="card menu-card"
+                         data-nome="Pernil no Prato" data-preco="12.00€"
+                         data-img="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no"
+                         data-desc="Prato de pernil com batata assada e salada"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" loading="lazy">
+                        <div class="card-body text-center"><h5>Pernil no Prato</h5><p class="text-danger fw-bold">12.00€</p></div>
+                    </div>
+                </div>
 
-<li class="nav-item">
-<button class="nav-link active" data-bs-toggle="pill" data-bs-target="#leitao">Leitão</button>
-</li>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="320">
+                    <div class="card menu-card"
+                         data-nome="Pernil ao Kilo" data-preco="30.00€"
+                         data-img="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no"
+                         data-desc="Pernil assado ao quilo para partilhar"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" loading="lazy">
+                        <div class="card-body text-center"><h5>Pernil ao Kilo</h5><p class="text-danger fw-bold">30.00€/kg</p></div>
+                    </div>
+                </div>
 
-<li class="nav-item">
-<button class="nav-link" data-bs-toggle="pill" data-bs-target="#pernil">Pernil</button>
-</li>
+            </div>
+        </div>
 
-<li class="nav-item">
-<button class="nav-link" data-bs-toggle="pill" data-bs-target="#pregos">Pregos & Bifanas</button>
-</li>
+        <!-- PREGOS -->
+        <div class="tab-pane fade" id="pregos">
+            <div class="row g-4">
 
-<li class="nav-item">
-<button class="nav-link" data-bs-toggle="pill" data-bs-target="#bebidas">Bebidas</button>
-</li>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card menu-card"
+                         data-nome="Prego no Pão" data-preco="5.50€"
+                         data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s"
+                         data-desc="Prego no pão com alho e manteiga"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s" loading="lazy">
+                        <div class="card-body text-center"><h5>Prego no Pão</h5><p class="text-danger fw-bold">5.50€</p></div>
+                    </div>
+                </div>
 
-</ul>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
+                    <div class="card menu-card"
+                         data-nome="Prego no Prato" data-preco="9.50€"
+                         data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s"
+                         data-desc="Prego no prato com batata frita e salada"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s" loading="lazy">
+                        <div class="card-body text-center"><h5>Prego no Prato</h5><p class="text-danger fw-bold">9.50€</p></div>
+                    </div>
+                </div>
 
-<div class="tab-content">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
+                    <div class="card menu-card"
+                         data-nome="Bifana" data-preco="4.50€"
+                         data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD56OJcnqjJYZgqw0osjJZZoEDtSnWdJWxg&s"
+                         data-desc="Bifana com tempero tradicional"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD56OJcnqjJYZgqw0osjJZZoEDtSnWdJWxg&s" loading="lazy">
+                        <div class="card-body text-center"><h5>Bifana</h5><p class="text-danger fw-bold">4.50€</p></div>
+                    </div>
+                </div>
 
-<!-- LEITAO -->
+            </div>
+        </div>
 
-<div class="tab-pane fade show active" id="leitao">
+        <!-- BEBIDAS -->
+        <div class="tab-pane fade" id="bebidas">
+            <div class="row g-4">
 
-<div class="row g-4">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card menu-card"
+                         data-nome="Cerveja Garrafa" data-preco="2.00€"
+                         data-img="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg"
+                         data-desc="Cerveja nacional em garrafa, bem fresquinha"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg" loading="lazy">
+                        <div class="card-body text-center"><h5>Cerveja Garrafa</h5><p class="text-danger fw-bold">2.00€</p></div>
+                    </div>
+                </div>
 
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card"
-     data-nome="Sandes de Leitão"
-     data-preco="5.70€"
-     data-img="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg"
-     data-desc="Sandes tradicional de leitão assado com molho especial"
-     data-bs-toggle="modal"
-     data-bs-target="#modalProduto">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
+                    <div class="card menu-card"
+                         data-nome="Fino" data-preco="1.50€"
+                         data-img="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg"
+                         data-desc="Fino de pressão"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg" loading="lazy">
+                        <div class="card-body text-center"><h5>Fino</h5><p class="text-danger fw-bold">1.50€</p></div>
+                    </div>
+                </div>
 
-<img src="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
+                    <div class="card menu-card"
+                         data-nome="Vinho Branco" data-preco="3.50€"
+                         data-img="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg"
+                         data-desc="Vinho branco da região, fresco e leve"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg" loading="lazy">
+                        <div class="card-body text-center"><h5>Vinho Branco</h5><p class="text-danger fw-bold">3.50€</p></div>
+                    </div>
+                </div>
 
-<div class="card-body text-center">
-<h5>Sandes de Leitão</h5>
-<p class="text-danger fw-bold">5.70€</p>
-<button class="favorito-btn" data-id="1">
-❤️ Favoritar
-</button>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
+                    <div class="card menu-card"
+                         data-nome="Vinho Tinto" data-preco="3.50€"
+                         data-img="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg"
+                         data-desc="Vinho tinto encorpado da região"
+                         data-bs-toggle="modal" data-bs-target="#modalProduto">
+                        <img src="https://d1ralsognjng37.cloudfront.net/06ae9394-bc11-4c05-8cad-b179c561ce65.jpeg" loading="lazy">
+                        <div class="card-body text-center"><h5>Vinho Tinto</h5><p class="text-danger fw-bold">3.50€</p></div>
+                    </div>
+                </div>
 
-</div>
+            </div>
+        </div>
 
-</div>
-</div>
-
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card"
-     data-nome="Sandes Leitao c/Queijo da Serra"
-     data-preco="6.70€"
-     data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD56OJcnqjJYZgqw0osjJZZoEDtSnWdJWxg&s"
-     data-desc="Sandes tradicional de leitão assado com molho especial"
-     data-bs-toggle="modal"
-     data-bs-target="#modalProduto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzD56OJcnqjJYZgqw0osjJZZoEDtSnWdJWxg&s" class="card-img-top">
-<div class="card-body text-center">
-<h5>Sandes Leitao c/Queijo da Serra</h5>
-<p class="text-danger fw-bold">6.70€</p>
-
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card"
-     data-nome="Prato Leitão"
-     data-preco="11.00€"
-     data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s"
-     data-desc="Sandes tradicional de leitão assado com molho especial"
-     data-bs-toggle="modal"
-     data-bs-target="#modalProduto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtA8Mr8_9bJimirACNfqOeM-JqIp546vWw&s" class="card-img-top">
-<div class="card-body text-center">
-<h5>Prato de Leitão</h5>
-<p class="text-danger fw-bold">11.00€</p>
-
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card"
-     data-nome="Leitão ao Kilo"
-     data-preco="34.00€"
-     data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s"
-     data-desc="Sandes tradicional de leitão assado com molho especial"
-     data-bs-toggle="modal"
-     data-bs-target="#modalProduto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s" class="card-img-top">
-<div class="card-body text-center">
-<h5>Leitão ao Kilo</h5>
-<p class="text-danger fw-bold">34.00€</p>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-
-<!-- PERNIL -->
-
-<div class="tab-pane fade" id="pernil">
-
-<div class="row g-4">
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card"
-     data-nome="Sandes de Leitão"
-     data-preco="6.50€"
-     data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jqM1z9nW2poudaohw_ZdzttRH3n1-lKw3Q&s"
-     data-desc="Sandes tradicional de leitão assado com molho especial"
-     data-bs-toggle="modal"
-     data-bs-target="#modalProduto">
-<img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" class="card-img-top">
-<div class="card-body text-center">
-<h5>Sandes de Pernil</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" class="card-img-top">
-<div class="card-body text-center">
-<h5>Pernil com Queijo</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" class="card-img-top">
-<div class="card-body text-center">
-<h5>Pernil com Ovo e Presunto</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" class="card-img-top">
-<div class="card-body text-center">
-<h5>Pernil com Presunto</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" class="card-img-top">
-<div class="card-body text-center">
-<h5>Pernil no Prato</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no" class="card-img-top">
-<div class="card-body text-center">
-<h5>Pernil ao Kilo</h5>
-</div>
-</div>
-</div>
-
+    </div>
 </div>
 </div>
 
 
-<!-- PREGOS -->
-
-<div class="tab-pane fade" id="pregos">
-
-<div class="row g-4">
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/prego.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Prego no Pão</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/prego-prato.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Prego no Prato</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/bifana.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Bifana</h5>
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- BEBIDAS -->
-
-<div class="tab-pane fade" id="bebidas">
-
-<div class="row g-4">
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/cerveja.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Cerveja Garrafa</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/fino.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Fino</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/vinho.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Vinho Branco</h5>
-</div>
-</div>
-</div>
-
-<div class="col-md-3 col-sm-6">
-<div class="card menu-card">
-<img src="img/vinho-tinto.jpg" class="card-img-top">
-<div class="card-body text-center">
-<h5>Vinho Tinto</h5>
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!--Modals-->
-
+<!-- MODAL PRODUTO -->
 <div class="modal fade" id="modalProduto" tabindex="-1">
-
-<div class="modal-dialog modal-lg modal-dialog-centered">
-
-<div class="modal-content">
-
-<div class="modal-header">
-<h4 id="modalNome"></h4>
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalNome"></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImg" class="img-fluid mb-4" style="max-height:360px;border-radius:14px;">
+                <h3 id="modalPreco" class="text-danger mb-3"></h3>
+                <p id="modalDesc" style="color:rgba(255,238,220,.8);font-size:16px;"></p>
+                <div class="d-flex gap-3 justify-content-center mt-4">
+                    <a href="encomenda.html" class="btn" style="background:linear-gradient(135deg,#8b2d04,#d18a1f);color:#fff;border-radius:14px;padding:12px 28px;font-weight:700;">Encomendar</a>
+                    <a href="reservas.html" class="btn" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;border-radius:14px;padding:12px 28px;font-weight:700;">Reservar Mesa</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="modal-body text-center">
 
-<img id="modalImg" class="img-fluid mb-4" style="max-height:400px;">
-
-<h3 id="modalPreco" class="text-danger mb-3"></h3>
-
-<p id="modalDesc"></p>
-
-<button class="btn btn-success mt-3">Adicionar ao Pedido</button>
-
-</div>
-
-</div>
-</div>
-
-</div>
+<!-- FOOTER -->
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
+                <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4">
+                <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
+                <div class="mb-3"><strong class="text-white">📍 Viseu</strong><br><span class="small text-light">Rua Formosa, nº 45</span></div>
+                <div class="mb-3"><strong class="text-white">📍 Aveiro</strong><br><span class="small text-light">Rua da Pega, Edifício UA</span></div>
+                <div class="mb-3"><strong class="text-white">📍 Coimbra</strong><br><span class="small text-light">Largo da Portagem, nº 12</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
+                <p class="mb-2">📞 +351 234 123 456</p>
+                <p class="mb-2">✉️ geral@zedopernil.pt</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-outline-warning btn-sm me-2">Facebook</a>
+                    <a href="#" class="btn btn-outline-warning btn-sm">Instagram</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
+                <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
+                <p class="mb-1 fw-bold">Segunda a Domingo</p>
+                <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
+                <hr class="border-warning w-25 mx-auto mx-md-0">
+            </div>
+        </div>
+        <hr class="bg-secondary opacity-25">
+        <div class="text-center pt-2">
+            <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
+        </div>
+    </div>
+</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/animations.js"></script>
 <script src="js/cardapio.js"></script>
 
 <script>
+/* Preencher modal */
 const cards = document.querySelectorAll('.menu-card');
+cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+        document.getElementById('modalNome').innerText  = card.dataset.nome  || '';
+        document.getElementById('modalPreco').innerText = card.dataset.preco || '';
+        document.getElementById('modalImg').src         = card.dataset.img   || '';
+        document.getElementById('modalDesc').innerText  = card.dataset.desc  || '';
+    });
+});
 
-cards.forEach(card => {
-    card.addEventListener('click', () => {
+/* Favoritar com heart beat */
+document.querySelectorAll('.favorito-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        btn.style.animation = 'heartBeat .6s ease';
+        btn.style.color = '#ff4d6d';
+        setTimeout(function () { btn.style.animation = ''; }, 700);
+        showToast('Adicionado aos favoritos! ❤️', 'success');
+    });
+});
 
-        document.getElementById('modalNome').innerText = card.dataset.nome;
-        document.getElementById('modalPreco').innerText = card.dataset.preco;
-        document.getElementById('modalImg').src = card.dataset.img;
-        document.getElementById('modalDesc').innerText = card.dataset.desc;
-
+/* Animação stagger ao mudar de tab */
+document.querySelectorAll('[data-bs-toggle="pill"]').forEach(function (btn) {
+    btn.addEventListener('shown.bs.tab', function (e) {
+        var target = document.querySelector(e.target.getAttribute('data-bs-target'));
+        if (!target) return;
+        target.querySelectorAll('.menu-card').forEach(function (card, i) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(function () {
+                card.style.transition = 'opacity .4s ease, transform .4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, i * 70);
+        });
     });
 });
 </script>
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'pt',
-            autoDisplay: false
-        }, 'google_translate_element');
+        new google.translate.TranslateElement({ pageLanguage: 'pt', autoDisplay: false }, 'google_translate_element');
     }
-
     function doGTranslate(lang_pair) {
         if (lang_pair.value) lang_pair = lang_pair.value;
         if (lang_pair == '') return;
         var lang = lang_pair.split('|')[1];
         var teCombo = document.querySelector('.goog-te-combo');
         if (teCombo == null || teCombo.innerHTML == null) {
-            setTimeout(function() { doGTranslate(lang_pair); }, 500);
+            setTimeout(function () { doGTranslate(lang_pair); }, 500);
         } else {
             teCombo.value = lang;
             teCombo.dispatchEvent(new Event('change'));
@@ -412,7 +458,6 @@ cards.forEach(card => {
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src="js/script.js"></script>
-</body>
 
+</body>
 </html>

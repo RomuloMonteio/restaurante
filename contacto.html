@@ -1,84 +1,366 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contacto</title>
+    <title>Contacto — Zé do Pernil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/contacto.css">
 </head>
 <body>
-    
 
-        <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-
-            <a class="navbar-brand" href="#">Zé do Pernil</a>
-
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="cardapio.html">Cardápio</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="encomenda.html">Encomendar</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-
-                </ul>
-<div class="d-flex align-items-center ms-lg-3 py-2">
-    <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
-        <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
-        <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
-        <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
-    </a>
-    <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
-        <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
-    </a>
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-logo">Zé do <span>Pernil</span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
 </div>
 
-<div id="google_translate_element" style="display:none"></div>
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE TRANSITION -->
+<div id="page-transition"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Zé do Pernil</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="reservas.html">Reservar</a></li>
+                <li class="nav-item"><a class="nav-link" href="encomenda.html">Encomendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="d-flex align-items-center ms-lg-3 py-2">
+                <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+                    <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+                    <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+                    <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+                    <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+                </a>
+            </div>
+            <div id="google_translate_element" style="display:none"></div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO MINI -->
+<section class="page-hero">
+    <div class="container">
+        <span class="page-hero-badge anim-fade-in-down">📞 Fale Connosco</span>
+        <h1 class="anim-fade-in-up delay-1">Contacto</h1>
+        <p class="anim-fade-in-up delay-2">
+            Estamos aqui para ajudar. Contacte-nos por telefone, e-mail ou venha visitar-nos pessoalmente.
+        </p>
+    </div>
+</section>
+
+
+<!-- CARDS DE CONTACTO -->
+<section class="contact-section">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h5>Telefone</h5>
+                    <a href="tel:+351234123456">+351 234 123 456</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h5>E-mail</h5>
+                    <a href="mailto:geral@zedopernil.pt">geral@zedopernil.pt</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h5>WhatsApp</h5>
+                    <a href="https://wa.me/351912345678">+351 912 345 678</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h5>Horário</h5>
+                    <p>Seg – Dom<br>12:00 — 22:30</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- LOJAS -->
+<section class="lojas-section">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="page-hero-badge">📍 As Nossas Lojas</span>
+            <h2 style="font-size:40px;font-weight:800;color:#fff5e8;margin-top:12px;">Onde Nos Encontrar</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="loja-card">
+                    <span class="loja-badge">Aveiro</span>
+                    <h5>Restaurante Aveiro</h5>
+                    <p class="loja-info">📍 Rua da Pega, Edifício UA<br>3810-193 Aveiro</p>
+                    <p class="loja-info">📞 +351 234 123 456</p>
+                    <p class="loja-info">🕐 12:00 – 22:30 (todos os dias)</p>
+                    <div class="loja-map ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24317.43!2d-8.65536!3d40.64427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23a0c2b7b09f6b%3A0x1!2sAveiro!5e0!3m2!1spt!2spt!4v1710000000001"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="loja-card">
+                    <span class="loja-badge">Coimbra</span>
+                    <h5>Restaurante Coimbra</h5>
+                    <p class="loja-info">📍 Largo da Portagem, nº 12<br>3000-337 Coimbra</p>
+                    <p class="loja-info">📞 +351 239 456 789</p>
+                    <p class="loja-info">🕐 12:00 – 22:30 (todos os dias)</p>
+                    <div class="loja-map ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24429.54!2d-8.42776!3d40.20645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f90c9a39ff79%3A0x1!2sCoimbra!5e0!3m2!1spt!2spt!4v1710000000002"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="loja-card">
+                    <span class="loja-badge">Viseu</span>
+                    <h5>Restaurante Viseu</h5>
+                    <p class="loja-info">📍 Rua Formosa, nº 45<br>3500-135 Viseu</p>
+                    <p class="loja-info">📞 +351 232 789 012</p>
+                    <p class="loja-info">🕐 12:00 – 22:30 (todos os dias)</p>
+                    <div class="loja-map ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24221.03!2d-7.91330!3d40.65649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd233ff2527d0bcb%3A0x1!2sViseu!5e0!3m2!1spt!2spt!4v1710000000003"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- HORÁRIO -->
+<section class="horario-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6" data-aos="fade-up">
+                <div class="horario-card">
+                    <h4 style="font-size:22px;font-weight:800;color:#fff5e8;margin-bottom:22px;text-align:center;">
+                        🕐 Horários de Funcionamento
+                    </h4>
+                    <div class="horario-row">
+                        <span class="dia">Segunda-feira</span>
+                        <span class="hora">12:00 — 22:30</span>
+                    </div>
+                    <div class="horario-row">
+                        <span class="dia">Terça-feira</span>
+                        <span class="hora">12:00 — 22:30</span>
+                    </div>
+                    <div class="horario-row">
+                        <span class="dia">Quarta-feira</span>
+                        <span class="hora">12:00 — 22:30</span>
+                    </div>
+                    <div class="horario-row">
+                        <span class="dia">Quinta-feira</span>
+                        <span class="hora">12:00 — 22:30</span>
+                    </div>
+                    <div class="horario-row">
+                        <span class="dia">Sexta-feira</span>
+                        <span class="hora">12:00 — 23:00</span>
+                    </div>
+                    <div class="horario-row">
+                        <span class="dia">Sábado</span>
+                        <span class="hora">11:30 — 23:00</span>
+                    </div>
+                    <div class="horario-row">
+                        <span class="dia">Domingo</span>
+                        <span class="hora">11:30 — 22:00</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <h1>Contacto</h1>
-    
 
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'pt',
-            autoDisplay: false
-        }, 'google_translate_element');
+<!-- FORMULÁRIO DE CONTACTO -->
+<section class="form-section">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="page-hero-badge">✉️ Envie uma Mensagem</span>
+            <h2 style="font-size:40px;font-weight:800;color:#fff5e8;margin-top:12px;">Fale Connosco</h2>
+        </div>
+
+        <div class="form-contact-wrap" data-aos="fade-up" data-aos-delay="100">
+            <h3>Envie-nos uma mensagem</h3>
+            <p class="sub">Respondemos em menos de 24 horas.</p>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" id="contact-nome" placeholder="O seu nome">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" id="contact-email" placeholder="email@exemplo.com">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Assunto</label>
+                        <select id="contact-assunto">
+                            <option value="">Selecione um assunto</option>
+                            <option value="reserva">Reserva de Mesa</option>
+                            <option value="encomenda">Encomenda Especial</option>
+                            <option value="evento">Evento Privado</option>
+                            <option value="sugestao">Sugestão / Feedback</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea id="contact-mensagem" placeholder="Escreva a sua mensagem..."></textarea>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn-contact-submit" onclick="enviarContacto()">
+                        <span class="btn-text">Enviar Mensagem ✉️</span>
+                        <span class="btn-loading">A enviar...</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
+                <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4">
+                <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
+                <div class="mb-3"><strong class="text-white">📍 Viseu</strong><br><span class="small text-light">Rua Formosa, nº 45<br>3500-135 Viseu</span></div>
+                <div class="mb-3"><strong class="text-white">📍 Aveiro</strong><br><span class="small text-light">Rua da Pega, Edifício UA<br>3810-193 Aveiro</span></div>
+                <div class="mb-3"><strong class="text-white">📍 Coimbra</strong><br><span class="small text-light">Largo da Portagem, nº 12<br>3000-337 Coimbra</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
+                <p class="mb-2">📞 +351 234 123 456</p>
+                <p class="mb-2">✉️ geral@zedopernil.pt</p>
+                <p class="mb-3">💬 +351 912 345 678</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-outline-warning btn-sm me-2">Facebook</a>
+                    <a href="#" class="btn btn-outline-warning btn-sm">Instagram</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
+                <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
+                <p class="mb-1 fw-bold">Segunda a Domingo</p>
+                <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
+                <hr class="border-warning w-25 mx-auto mx-md-0">
+                <p class="small text-muted">Aberto ininterruptamente para o seu almoço e jantar.</p>
+            </div>
+        </div>
+        <hr class="bg-secondary opacity-25">
+        <div class="text-center pt-2">
+            <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/animations.js"></script>
+
+<script>
+function enviarContacto() {
+    var nome     = document.getElementById('contact-nome').value.trim();
+    var email    = document.getElementById('contact-email').value.trim();
+    var assunto  = document.getElementById('contact-assunto').value;
+    var mensagem = document.getElementById('contact-mensagem').value.trim();
+    var btn      = document.querySelector('.btn-contact-submit');
+
+    if (!nome || !email || !assunto || !mensagem) {
+        showToast('Por favor preencha todos os campos.', 'error');
+        return;
     }
 
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    setTimeout(function () {
+        btn.classList.remove('loading');
+        btn.disabled = false;
+        document.getElementById('contact-nome').value = '';
+        document.getElementById('contact-email').value = '';
+        document.getElementById('contact-assunto').value = '';
+        document.getElementById('contact-mensagem').value = '';
+        showToast('Mensagem enviada com sucesso! Responderemos em breve. ✅', 'success');
+    }, 1500);
+}
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'pt', autoDisplay: false }, 'google_translate_element');
+    }
     function doGTranslate(lang_pair) {
         if (lang_pair.value) lang_pair = lang_pair.value;
         if (lang_pair == '') return;
         var lang = lang_pair.split('|')[1];
         var teCombo = document.querySelector('.goog-te-combo');
         if (teCombo == null || teCombo.innerHTML == null) {
-            setTimeout(function() { doGTranslate(lang_pair); }, 500);
+            setTimeout(function () { doGTranslate(lang_pair); }, 500);
         } else {
             teCombo.value = lang;
             teCombo.dispatchEvent(new Event('change'));
@@ -86,5 +368,6 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>

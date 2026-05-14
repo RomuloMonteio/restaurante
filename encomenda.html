@@ -1,121 +1,548 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Encomendar — Zé do Pernil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/encomenda.css">
-    
-
-
-    <style>
-
-
-</style>
 </head>
 <body>
-    
 
-            <!-- NAVBAR -->
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-logo">Zé do <span>Pernil</span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+</div>
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container">
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
 
-                    <a class="navbar-brand" href="#">Zé do Pernil</a>
+<!-- PAGE TRANSITION -->
+<div id="page-transition"></div>
 
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+<!-- BLOBS FLUTUANTES -->
+<div class="blob-wrap">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+</div>
 
-                    <div class="collapse navbar-collapse" id="menu">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Zé do Pernil</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="reservas.html">Reservar</a></li>
+                <li class="nav-item"><a class="nav-link active" href="encomenda.html">Encomendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="d-flex align-items-center ms-lg-3 py-2">
+                <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+                    <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+                    <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+                    <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+                    <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+                </a>
+            </div>
+            <div id="google_translate_element" style="display:none"></div>
+        </div>
+    </div>
+</nav>
 
-                        <ul class="navbar-nav ms-auto">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
+<!-- PÁGINA -->
+<div class="enc-page">
+    <div class="enc-card">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="cardapio.html">Cardápio</a>
-                            </li>
+        <!-- FORMULÁRIO -->
+        <div id="enc-form-content">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="encomenda.html">Encomendar</a>
-                            </li>
+            <span class="enc-badge">📦 Fazer Encomenda</span>
+            <h2>Encomendar</h2>
+            <p class="enc-sub">Preencha os campos abaixo. Entraremos em contacto para confirmar.</p>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.html">Contacto</a>
-                            </li>
+            <!-- NOME + TELEFONE -->
+            <div class="enc-row">
+                <div class="enc-group" style="margin-bottom:0;">
+                    <label class="enc-label">Nome Completo</label>
+                    <input class="enc-input" type="text" id="nome" placeholder="O seu nome">
+                </div>
+                <div class="enc-group" style="margin-bottom:0;">
+                    <label class="enc-label">Nº de Telemóvel</label>
+                    <input class="enc-input" type="tel" id="telefone" placeholder="+351 9xx xxx xxx">
+                </div>
+            </div>
 
-                        </ul>
-        <div class="d-flex align-items-center ms-lg-3 py-2">
-            <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
-                <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
-            </a>
-            <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
-                <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
-            </a>
-            <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
-                <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
-            </a>
-            <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
-                <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
-            </a>
+            <!-- PRODUTO -->
+            <div class="enc-group">
+                <label class="enc-label">Produto</label>
+                <select class="enc-select" id="produto" onchange="onProdutoChange()">
+                    <option value="">Selecione um produto</option>
+                    <option value="Sandes de Leitão"   data-preco="5.70"  data-kilo="0">Sandes de Leitão — 5.70€ / unidade</option>
+                    <option value="Sandes de Pernil"   data-preco="6.50"  data-kilo="0">Sandes de Pernil — 6.50€ / unidade</option>
+                    <option value="Leitão ao Kilo"     data-preco="34.00" data-kilo="1">Leitão ao Kilo — 35.00€ / kg</option>
+                    <option value="Pernil ao Kilo"     data-preco="30.00" data-kilo="1">Pernil ao Kilo — 30.00€ / kg</option>
+                    <option value="1/2 Leitão"         data-preco="80.00" data-kilo="0" data-fixo="1">½ Leitão — 80.00€ (fixo)</option>
+                    <option value="Leitão Inteiro"     data-preco="150.00" data-kilo="0" data-fixo="1">Leitão Inteiro — 150.00€ (fixo)</option>
+                </select>
+            </div>
+
+            <!-- QUANTIDADE (só para sandes) -->
+            <div class="enc-group" id="qtd-wrap">
+                <label class="enc-label">Quantidade</label>
+                <input class="enc-input" type="number" id="quantidade" value="1" min="1" max="99" oninput="calcularPreco()">
+            </div>
+
+            <!-- KILOS (só para produtos ao kilo) -->
+            <div class="kilos-wrap" id="kilos-wrap">
+                <label class="enc-label">Quantos Quilos?</label>
+                <input class="enc-input" type="number" id="kilos" placeholder="Ex: 2.5" min="0.5" step="0.5" oninput="calcularPreco()">
+                <span class="enc-hint">Mínimo 0.5 kg · incrementos de 0.5 kg</span>
+            </div>
+
+            <!-- DISPLAY PREÇO -->
+            <div class="preco-display" id="preco-display">
+                <span class="preco-label">Valor estimado:</span>
+                <span class="preco-valor" id="preco-valor">0.00€</span>
+            </div>
+
+            <!-- RESTAURANTE -->
+            <div class="enc-group">
+                <label class="enc-label">Restaurante</label>
+                <select class="enc-select" id="restaurante">
+                    <option value="">Selecione o restaurante</option>
+                    <option value="Aveiro">Aveiro — Rua da Pega</option>
+                    <option value="Coimbra">Coimbra — Largo da Portagem</option>
+                    <option value="Viseu">Viseu — Rua Formosa</option>
+                </select>
+            </div>
+
+            <div class="enc-divider"></div>
+
+            <!-- DATA E HORA -->
+            <div class="enc-row">
+                <div class="enc-group" style="margin-bottom:0;">
+                    <label class="enc-label">Data de Levantamento</label>
+                    <input class="enc-input" type="date" id="data" onchange="validarData()">
+                    <span class="enc-hint" id="data-hint">Não pode ser uma data passada</span>
+                </div>
+                <div class="enc-group" style="margin-bottom:0;">
+                    <label class="enc-label">Hora de Levantamento</label>
+                    <input class="enc-input" type="time" id="hora" min="12:00" max="22:30" onchange="validarHora()">
+                    <span class="enc-hint" id="hora-hint">Horário: 12:00 – 22:30</span>
+                </div>
+            </div>
+
+            <div class="enc-divider"></div>
+
+            <!-- DESCRIÇÃO / OBSERVAÇÕES -->
+            <div class="enc-group">
+                <label class="enc-label">Observações (opcional)</label>
+                <textarea class="enc-textarea" id="descricao" placeholder="Ex: molho extra, sem pele, embalagem especial..."></textarea>
+            </div>
+
+            <!-- BOTÃO SUBMIT -->
+            <button class="btn-enc" id="btn-submit" onclick="encomendar()">
+                <span class="btn-text">Enviar Encomenda 📦</span>
+                <span class="btn-loading">A enviar...</span>
+            </button>
+
         </div>
 
-        <div id="google_translate_element" style="display:none"></div>
+        <!-- COMPROVATIVO -->
+        <div class="enc-success" id="enc-success">
+
+            <div class="comprovativo" id="comprovativo">
+
+                <!-- CABEÇALHO -->
+                <div class="comp-header">
+                    <div class="comp-logo">Zé do Pernil</div>
+                    <div class="comp-titulo">Comprovativo de Encomenda</div>
+                    <div class="comp-num" id="comp-num">#ENC-0000</div>
+                </div>
+
+                <!-- LINHA DE ESTADO -->
+                <div class="comp-status">
+                    <span class="comp-status-dot"></span>
+                    Encomenda recebida com sucesso
+                </div>
+
+                <!-- DADOS DO CLIENTE -->
+                <div class="comp-secao">
+                    <div class="comp-secao-titulo">👤 Dados do Cliente</div>
+                    <div class="comp-linha">
+                        <span class="comp-chave">Nome</span>
+                        <span class="comp-valor" id="comp-nome">—</span>
+                    </div>
+                    <div class="comp-linha">
+                        <span class="comp-chave">Telemóvel</span>
+                        <span class="comp-valor" id="comp-tel">—</span>
                     </div>
                 </div>
-            </nav>
 
+                <div class="comp-divisor"></div>
 
-<div class="form-glass">
-    <div class="overlay">
+                <!-- DETALHE DA ENCOMENDA -->
+                <div class="comp-secao">
+                    <div class="comp-secao-titulo">📦 Detalhe da Encomenda</div>
+                    <div class="comp-linha">
+                        <span class="comp-chave">Produto</span>
+                        <span class="comp-valor" id="comp-produto">—</span>
+                    </div>
+                    <div class="comp-linha" id="comp-qtd-linha">
+                        <span class="comp-chave">Quantidade</span>
+                        <span class="comp-valor" id="comp-qtd">—</span>
+                    </div>
+                    <div class="comp-linha">
+                        <span class="comp-chave">Restaurante</span>
+                        <span class="comp-valor" id="comp-rest">—</span>
+                    </div>
+                    <div class="comp-linha">
+                        <span class="comp-chave">Data</span>
+                        <span class="comp-valor" id="comp-data">—</span>
+                    </div>
+                    <div class="comp-linha">
+                        <span class="comp-chave">Hora</span>
+                        <span class="comp-valor" id="comp-hora">—</span>
+                    </div>
+                    <div class="comp-linha" id="comp-obs-linha" style="display:none;">
+                        <span class="comp-chave">Observações</span>
+                        <span class="comp-valor" id="comp-obs">—</span>
+                    </div>
+                </div>
 
-<h2>Fazer Encomenda</h2>
+                <div class="comp-divisor"></div>
 
-<input type="text" id="nome" placeholder="Seu nome">
+                <!-- TOTAL -->
+                <div class="comp-total-linha">
+                    <span class="comp-total-label">Valor Estimado</span>
+                    <span class="comp-total-valor" id="comp-total">0.00€</span>
+                </div>
 
-<select id="produto">
-    <option value="Sandes de Leitão">Sandes de Leitão</option>
-    <option value="Pernil">Pernil</option>
-</select>
+                <!-- RODAPÉ -->
+                <div class="comp-footer">
+                    <p>Confirmaremos a encomenda por telefone.<br>Obrigado pela preferência! 🙏</p>
+                    <p class="comp-data-emissao" id="comp-emissao"></p>
+                </div>
 
-<input type="number" id="quantidade" placeholder="Quantidade" value="1">
+            </div><!-- /comprovativo -->
 
-<input type="date" id="data">
+            <!-- BOTÕES DE AÇÃO -->
+            <div class="comp-acoes">
+                <button class="btn-enc" onclick="imprimirComprovativo()">
+                    🖨️ Imprimir / Guardar PDF
+                </button>
+                <button class="btn-enc-outline" onclick="novaEncomenda()" style="margin-top:10px;">
+                    Nova Encomenda
+                </button>
+            </div>
 
-<input type="time" id="hora">
+        </div>
 
-<button class="btn-glass" onclick="encomendar()">
-Enviar Encomenda 
-</button>
-
-<button onclick="Teste()">Teste</button>
-
-
+    </div>
 </div>
-</div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/animations.js"></script>
+
+<script>
+/* ------ TABELA DE PRODUTOS ------ */
+var PRODUTOS = {
+    'Sandes de Leitão': { preco: 5.70,   kilo: false, fixo: false },
+    'Sandes de Pernil': { preco: 6.50,   kilo: false, fixo: false },
+    'Leitão ao Kilo':   { preco: 34.00,  kilo: true,  fixo: false },
+    'Pernil ao Kilo':   { preco: 30.00,  kilo: true,  fixo: false },
+    '1/2 Leitão':       { preco: 80.00,  kilo: false, fixo: true  },
+    'Leitão Inteiro':   { preco: 150.00, kilo: false, fixo: true  }
+};
+
+/* ------ DEFINIR DATA MÍNIMA (hoje) ------ */
+document.addEventListener('DOMContentLoaded', function () {
+    var hoje = new Date();
+    var yyyy = hoje.getFullYear();
+    var mm   = String(hoje.getMonth() + 1).padStart(2, '0');
+    var dd   = String(hoje.getDate()).padStart(2, '0');
+    document.getElementById('data').min = yyyy + '-' + mm + '-' + dd;
+});
+
+/* ------ AO MUDAR PRODUTO ------ */
+function onProdutoChange() {
+    var sel     = document.getElementById('produto');
+    var val     = sel.value;
+    var info    = PRODUTOS[val] || null;
+    var qtdWrap = document.getElementById('qtd-wrap');
+    var kilWrap = document.getElementById('kilos-wrap');
+
+    if (!info) {
+        qtdWrap.style.display = 'none';
+        kilWrap.classList.remove('visible');
+        document.getElementById('preco-display').classList.remove('visible');
+        return;
+    }
+
+    if (info.kilo) {
+        qtdWrap.style.display = 'none';
+        kilWrap.classList.add('visible');
+        document.getElementById('kilos').value = '';
+    } else if (info.fixo) {
+        qtdWrap.style.display = 'none';
+        kilWrap.classList.remove('visible');
+    } else {
+        qtdWrap.style.display = 'block';
+        kilWrap.classList.remove('visible');
+        document.getElementById('quantidade').value = 1;
+    }
+
+    calcularPreco();
+}
+
+/* ------ CALCULAR PREÇO ------ */
+function calcularPreco() {
+    var val    = document.getElementById('produto').value;
+    var info   = PRODUTOS[val] || null;
+    var display = document.getElementById('preco-display');
+    var label   = document.getElementById('preco-valor');
+
+    if (!info) { display.classList.remove('visible'); return; }
+
+    var total = 0;
+
+    if (info.kilo) {
+        var kg = parseFloat(document.getElementById('kilos').value) || 0;
+        total  = kg * info.preco;
+    } else if (info.fixo) {
+        total = info.preco;
+    } else {
+        var qtd = parseInt(document.getElementById('quantidade').value) || 1;
+        total   = qtd * info.preco;
+    }
+
+    if (total > 0) {
+        label.textContent = total.toFixed(2) + '€';
+        display.classList.add('visible');
+    } else {
+        display.classList.remove('visible');
+    }
+}
+
+/* ------ VALIDAR DATA ------ */
+function validarData() {
+    var input    = document.getElementById('data');
+    var hint     = document.getElementById('data-hint');
+    var hoje     = new Date(); hoje.setHours(0,0,0,0);
+    var escolhida = new Date(input.value + 'T00:00:00');
+
+    if (input.value && escolhida < hoje) {
+        hint.textContent = '⚠️ Não pode escolher uma data passada.';
+        hint.classList.add('error-msg');
+        input.value = '';
+    } else {
+        hint.textContent = 'Não pode ser uma data passada';
+        hint.classList.remove('error-msg');
+    }
+}
+
+/* ------ VALIDAR HORA ------ */
+function validarHora() {
+    var input = document.getElementById('hora');
+    var hint  = document.getElementById('hora-hint');
+    var val   = input.value;
+
+    if (!val) return;
+
+    var partes = val.split(':');
+    var h = parseInt(partes[0]);
+    var m = parseInt(partes[1]);
+    var minutos = h * 60 + m;
+
+    if (minutos < 720 || minutos > 1350) {
+        /* 720 = 12:00, 1350 = 22:30 */
+        hint.textContent = '⚠️ Fora do horário (12:00 – 22:30).';
+        hint.classList.add('error-msg');
+        input.value = '';
+    } else {
+        hint.textContent = 'Horário: 12:00 – 22:30';
+        hint.classList.remove('error-msg');
+    }
+}
+
+/* ------ SUBMETER ENCOMENDA ------ */
+function encomendar() {
+    var nome        = document.getElementById('nome').value.trim();
+    var telefone    = document.getElementById('telefone').value.trim();
+    var produto     = document.getElementById('produto').value;
+    var restaurante = document.getElementById('restaurante').value;
+    var data        = document.getElementById('data').value;
+    var hora        = document.getElementById('hora').value;
+    var descricao   = document.getElementById('descricao').value.trim();
+    var btn         = document.getElementById('btn-submit');
+    var info        = PRODUTOS[produto] || null;
+
+    /* Validações */
+    if (!nome) { showToast('Por favor indique o seu nome.', 'error'); return; }
+    if (!telefone) { showToast('Por favor indique o seu número de telemóvel.', 'error'); return; }
+    if (!produto) { showToast('Selecione um produto.', 'error'); return; }
+    if (!restaurante) { showToast('Selecione o restaurante.', 'error'); return; }
+
+    if (info && info.kilo) {
+        var kg = parseFloat(document.getElementById('kilos').value);
+        if (!kg || kg < 0.5) { showToast('Indique quantos quilos (mínimo 0.5 kg).', 'error'); return; }
+    }
+
+    if (!data) { showToast('Selecione a data de levantamento.', 'error'); return; }
+
+    var hoje = new Date(); hoje.setHours(0,0,0,0);
+    var dataEscolhida = new Date(data + 'T00:00:00');
+    if (dataEscolhida < hoje) { showToast('Não pode escolher uma data passada.', 'error'); return; }
+
+    if (!hora) { showToast('Indique a hora de levantamento.', 'error'); return; }
+    var partes = hora.split(':');
+    var minutos = parseInt(partes[0]) * 60 + parseInt(partes[1]);
+    if (minutos < 720 || minutos > 1350) {
+        showToast('Hora fora do horário de funcionamento (12:00 – 22:30).', 'error');
+        return;
+    }
+
+    /* Calcular quantidade/kilos e total */
+    var quantidade = 1;
+    var kilos = null;
+    var totalValor = 0;
+
+    if (info && info.kilo) {
+        kilos      = parseFloat(document.getElementById('kilos').value);
+        quantidade = kilos;
+        totalValor = kilos * info.preco;
+    } else if (info && !info.fixo) {
+        quantidade = parseInt(document.getElementById('quantidade').value) || 1;
+        totalValor = quantidade * info.preco;
+    } else if (info) {
+        totalValor = info.preco;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    var payload = {
+        nome, telefone, produto, quantidade, restaurante,
+        data_entrega: data, hora_entrega: hora,
+        descricao: descricao || '',
+        valor_total: totalValor
+    };
+
+    fetch('http://localhost:3000/encomenda', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (resp) { mostrarSucesso(payload, totalValor, resp.id); })
+    .catch(function ()    { mostrarSucesso(payload, totalValor, null); });
+}
+
+function mostrarSucesso(p, total, encId) {
+    document.getElementById('enc-form-content').style.display = 'none';
+    document.getElementById('enc-success').classList.add('show');
+
+    /* Número da encomenda */
+    var num = encId ? String(encId).padStart(4, '0') : Math.floor(Math.random() * 9000 + 1000).toString();
+    document.getElementById('comp-num').textContent = '#ENC-' + num;
+
+    /* Cliente */
+    document.getElementById('comp-nome').textContent = p.nome;
+    document.getElementById('comp-tel').textContent  = p.telefone;
+
+    /* Encomenda */
+    document.getElementById('comp-produto').textContent = p.produto;
+    document.getElementById('comp-rest').textContent    = p.restaurante;
+
+    /* Data formatada */
+    var partes = p.data_entrega.split('-');
+    document.getElementById('comp-data').textContent = partes[2] + '/' + partes[1] + '/' + partes[0];
+    document.getElementById('comp-hora').textContent = p.hora_entrega;
+
+    /* Quantidade / kilos */
+    var info = PRODUTOS[p.produto];
+    var qtdLinha = document.getElementById('comp-qtd-linha');
+    if (info && info.kilo) {
+        document.getElementById('comp-qtd').textContent = p.quantidade + ' kg';
+        qtdLinha.style.display = 'flex';
+    } else if (info && !info.fixo) {
+        document.getElementById('comp-qtd').textContent = p.quantidade + ' unidade(s)';
+        qtdLinha.style.display = 'flex';
+    } else {
+        qtdLinha.style.display = 'none';
+    }
+
+    /* Observações */
+    if (p.descricao) {
+        document.getElementById('comp-obs').textContent = p.descricao;
+        document.getElementById('comp-obs-linha').style.display = 'flex';
+    }
+
+    /* Total */
+    document.getElementById('comp-total').textContent = total > 0 ? total.toFixed(2) + '€' : '—';
+
+    /* Data de emissão */
+    var agora = new Date();
+    document.getElementById('comp-emissao').textContent =
+        'Emitido em ' + agora.toLocaleDateString('pt-PT') + ' às ' + agora.toLocaleTimeString('pt-PT', { hour: '2-digit', minute: '2-digit' });
+}
+
+function imprimirComprovativo() {
+    window.print();
+}
+
+function novaEncomenda() {
+    document.getElementById('enc-form-content').style.display = 'block';
+    document.getElementById('enc-success').classList.remove('show');
+    document.getElementById('nome').value = '';
+    document.getElementById('telefone').value = '';
+    document.getElementById('produto').value = '';
+    document.getElementById('restaurante').value = '';
+    document.getElementById('quantidade').value = '1';
+    document.getElementById('kilos').value = '';
+    document.getElementById('data').value = '';
+    document.getElementById('hora').value = '';
+    document.getElementById('descricao').value = '';
+    document.getElementById('qtd-wrap').style.display = 'none';
+    document.getElementById('kilos-wrap').classList.remove('visible');
+    document.getElementById('preco-display').classList.remove('visible');
+    var btn = document.getElementById('btn-submit');
+    btn.classList.remove('loading');
+    btn.disabled = false;
+}
+</script>
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'pt',
-            autoDisplay: false
-        }, 'google_translate_element');
+        new google.translate.TranslateElement({ pageLanguage: 'pt', autoDisplay: false }, 'google_translate_element');
     }
-
     function doGTranslate(lang_pair) {
         if (lang_pair.value) lang_pair = lang_pair.value;
         if (lang_pair == '') return;
         var lang = lang_pair.split('|')[1];
         var teCombo = document.querySelector('.goog-te-combo');
         if (teCombo == null || teCombo.innerHTML == null) {
-            setTimeout(function() { doGTranslate(lang_pair); }, 500);
+            setTimeout(function () { doGTranslate(lang_pair); }, 500);
         } else {
             teCombo.value = lang;
             teCombo.dispatchEvent(new Event('change'));
@@ -123,6 +550,6 @@ Enviar Encomenda
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src="js/encomenda.js"></script>
+
 </body>
 </html>

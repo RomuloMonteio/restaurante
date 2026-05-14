@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas — Zé do Pernil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/reservas.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-logo">Zé do <span>Pernil</span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE TRANSITION -->
+<div id="page-transition"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Zé do Pernil</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="reservas.html">Reservar</a></li>
+                <li class="nav-item"><a class="nav-link" href="encomenda.html">Encomendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="d-flex align-items-center ms-lg-3 py-2">
+                <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+                    <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+                    <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+                    <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+                    <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+                </a>
+            </div>
+            <div id="google_translate_element" style="display:none"></div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO MINI -->
+<section class="page-hero">
+    <div class="container">
+        <span class="page-hero-badge anim-fade-in-down">🍽️ Reserve Já</span>
+        <h1 class="anim-fade-in-up delay-1">Reserve a Sua Mesa</h1>
+        <p class="anim-fade-in-up delay-2">
+            Garanta o seu lugar e venha desfrutar do melhor pernil de Portugal num ambiente único.
+        </p>
+    </div>
+</section>
+
+
+<!-- FORMULÁRIO DE RESERVA -->
+<section class="reserva-section">
+    <div class="container">
+
+        <div class="form-reserva-wrap" data-aos="fade-up">
+
+            <!-- FORM -->
+            <div id="reserva-form-content">
+                <h3>Detalhes da Reserva</h3>
+                <p class="sub">Preencha os campos abaixo e confirmaremos a sua reserva por telefone ou e-mail.</p>
+
+                <div class="row g-3">
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label-custom">Nome Completo</label>
+                        <input type="text" class="form-input-custom" id="res-nome" placeholder="O seu nome">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label-custom">Contacto (Tel. ou E-mail)</label>
+                        <input type="text" class="form-input-custom" id="res-contacto" placeholder="+351 9xx xxx xxx">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label-custom">Data da Reserva</label>
+                        <input type="date" class="form-input-custom" id="res-data">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label-custom">Hora da Reserva</label>
+                        <input type="time" class="form-input-custom" id="res-hora" min="12:00" max="22:00">
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label-custom">Restaurante</label>
+                        <select class="form-input-custom" id="res-restaurante">
+                            <option value="">Selecione o restaurante</option>
+                            <option value="Aveiro">Aveiro — Rua da Pega</option>
+                            <option value="Coimbra">Coimbra — Largo da Portagem</option>
+                            <option value="Viseu">Viseu — Rua Formosa</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label-custom">Número de Pessoas</label>
+                        <div class="pessoas-selector">
+                            <button class="pessoas-btn" onclick="alterarPessoas(-1)" type="button">−</button>
+                            <span class="pessoas-count" id="pessoas-count">2</span>
+                            <span class="pessoas-label">pessoas</span>
+                            <button class="pessoas-btn" onclick="alterarPessoas(1)" type="button">+</button>
+                        </div>
+                        <input type="hidden" id="res-pessoas" value="2">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label-custom">Notas / Pedidos Especiais (opcional)</label>
+                        <textarea class="form-input-custom" id="res-notas" rows="3"
+                            placeholder="Aniversário, alergias, cadeira de bebé..."></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn-reserva-submit" onclick="fazerReserva()">
+                            <span class="btn-text">Confirmar Reserva 🍽️</span>
+                            <span class="btn-loading">A processar reserva...</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SUCESSO -->
+            <div class="reserva-success" id="reserva-success">
+                <div class="success-checkmark">✅</div>
+                <h4>Reserva Recebida!</h4>
+                <p>Obrigado! A sua reserva foi registada com sucesso.<br>
+                   Entraremos em contacto para confirmação em breve.</p>
+                <div style="margin-top:28px;">
+                    <a href="cardapio.html" class="btn hero-btn-main">Ver o Cardápio</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- INFORMAÇÕES ÚTEIS -->
+<section class="info-section">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="page-hero-badge">ℹ️ Informações</span>
+            <h2 style="font-size:38px;font-weight:800;color:#fff5e8;margin-top:12px;">O Que Deve Saber</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="info-card">
+                    <span class="info-card-icon">⏰</span>
+                    <h5>Confirmação</h5>
+                    <p>Confirmamos a reserva por telefone ou e-mail até 2 horas após o pedido.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-card">
+                    <span class="info-card-icon">🔄</span>
+                    <h5>Cancelamento</h5>
+                    <p>Pode cancelar ou alterar a reserva até 2 horas antes sem qualquer custo.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="info-card">
+                    <span class="info-card-icon">👥</span>
+                    <h5>Grupos Grandes</h5>
+                    <p>Para grupos acima de 15 pessoas, contacte-nos diretamente por telefone.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="info-card">
+                    <span class="info-card-icon">🎂</span>
+                    <h5>Ocasiões Especiais</h5>
+                    <p>Aniversários, baptizados ou eventos? Indicar nas notas e tratamos de tudo.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
+                <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4">
+                <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
+                <div class="mb-3"><strong class="text-white">📍 Viseu</strong><br><span class="small text-light">Rua Formosa, nº 45</span></div>
+                <div class="mb-3"><strong class="text-white">📍 Aveiro</strong><br><span class="small text-light">Rua da Pega, Edifício UA</span></div>
+                <div class="mb-3"><strong class="text-white">📍 Coimbra</strong><br><span class="small text-light">Largo da Portagem, nº 12</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
+                <p class="mb-2">📞 +351 234 123 456</p>
+                <p class="mb-2">✉️ geral@zedopernil.pt</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-outline-warning btn-sm me-2">Facebook</a>
+                    <a href="#" class="btn btn-outline-warning btn-sm">Instagram</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
+                <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
+                <p class="mb-1 fw-bold">Segunda a Domingo</p>
+                <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
+                <hr class="border-warning w-25 mx-auto mx-md-0">
+            </div>
+        </div>
+        <hr class="bg-secondary opacity-25">
+        <div class="text-center pt-2">
+            <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/animations.js"></script>
+
+<script>
+var numPessoas = 2;
+
+function alterarPessoas(delta) {
+    numPessoas = Math.max(1, Math.min(30, numPessoas + delta));
+    document.getElementById('pessoas-count').textContent = numPessoas;
+    document.getElementById('res-pessoas').value = numPessoas;
+}
+
+function fazerReserva() {
+    var nome        = document.getElementById('res-nome').value.trim();
+    var contacto    = document.getElementById('res-contacto').value.trim();
+    var data        = document.getElementById('res-data').value;
+    var hora        = document.getElementById('res-hora').value;
+    var restaurante = document.getElementById('res-restaurante').value;
+    var pessoas     = document.getElementById('res-pessoas').value;
+    var notas       = document.getElementById('res-notas').value.trim();
+    var btn         = document.querySelector('.btn-reserva-submit');
+
+    if (!nome || !contacto || !data || !hora || !restaurante) {
+        showToast('Por favor preencha todos os campos obrigatórios.', 'error');
+        return;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    fetch('http://localhost:3000/reserva', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome, contacto, data_reserva: data, hora_reserva: hora, restaurante, num_pessoas: parseInt(pessoas), notas })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function () {
+        mostrarSucesso();
+    })
+    .catch(function () {
+        /* sem backend, mostra sucesso na mesma para demo */
+        mostrarSucesso();
+    });
+}
+
+function mostrarSucesso() {
+    document.getElementById('reserva-form-content').style.display = 'none';
+    document.getElementById('reserva-success').classList.add('show');
+}
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'pt', autoDisplay: false }, 'google_translate_element');
+    }
+    function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == '') return;
+        var lang = lang_pair.split('|')[1];
+        var teCombo = document.querySelector('.goog-te-combo');
+        if (teCombo == null || teCombo.innerHTML == null) {
+            setTimeout(function () { doGTranslate(lang_pair); }, 500);
+        } else {
+            teCombo.value = lang;
+            teCombo.dispatchEvent(new Event('change'));
+        }
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

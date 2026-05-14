@@ -1,388 +1,322 @@
-        <!DOCTYPE html>
-        <html lang="pt">
+<!DOCTYPE html>
+<html lang="pt">
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zé do Pernil</title>
 
-            <title>Zé do Pernil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
 
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<body>
 
-            <link rel="stylesheet" href="css/style.css">
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-logo">Zé do <span>Pernil</span></div>
+    <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+</div>
 
-        </head>
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
 
-        <body>
+<!-- PAGE TRANSITION -->
+<div id="page-transition"></div>
 
-            <!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container">
+        <a class="navbar-brand" href="index.html">Zé do Pernil</a>
 
-                    <a class="navbar-brand" href="#">Zé do Pernil</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                <li class="nav-item"><a class="nav-link" href="reservas.html">Reservar</a></li>
+                <li class="nav-item"><a class="nav-link" href="encomenda.html">Encomendar</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
 
-                    <div class="collapse navbar-collapse" id="menu">
-
-                        <ul class="navbar-nav ms-auto">
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="cardapio.html">Cardápio</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="encomenda.html">Encomendar</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.html">Contacto</a>
-                            </li>
-
-                        </ul>
-        <div class="d-flex align-items-center ms-lg-3 py-2">
-            <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
-                <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
-            </a>
-            <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
-                <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
-            </a>
-            <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
-                <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
-            </a>
-            <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
-                <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
-            </a>
+            <div class="d-flex align-items-center ms-lg-3 py-2">
+                <a href="#" onclick="doGTranslate('pt|pt');return false;" title="Português" class="me-2">
+                    <img src="https://flagcdn.com/w40/pt.png" width="24" alt="PT">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|en');return false;" title="English" class="me-2">
+                    <img src="https://flagcdn.com/w40/gb.png" width="24" alt="EN">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|es');return false;" title="Español" class="me-2">
+                    <img src="https://flagcdn.com/w40/es.png" width="24" alt="ES">
+                </a>
+                <a href="#" onclick="doGTranslate('pt|fr');return false;" title="Français">
+                    <img src="https://flagcdn.com/w40/fr.png" width="24" alt="FR">
+                </a>
+            </div>
+            <div id="google_translate_element" style="display:none"></div>
         </div>
-
-        <div id="google_translate_element" style="display:none"></div>
-                    </div>
-                </div>
-            </nav>
+    </div>
+</nav>
 
 
-            <!-- HERO -->
+<!-- HERO -->
 <section class="hero">
-
     <div class="hero-overlay">
-
         <div class="container text-center text-white">
+            <div class="hero-glass anim-float">
 
-            <div class="hero-glass">
-
-                <span class="hero-badge">
+                <span class="hero-badge anim-fade-in-down">
                     🔥 Especialidade da Casa
                 </span>
 
-                <h1>
+                <h1 class="anim-fade-in-up delay-1">
                     O Melhor Pernil de Portugal
                 </h1>
 
-                <p>
+                <p class="anim-fade-in-up delay-2">
                     Tradição, sabor e qualidade servidos todos os dias
                     com receitas autênticas e ingredientes selecionados.
                 </p>
 
-                <div class="hero-buttons">
-
-                    <a href="cardapio.html" class="btn hero-btn-main">
+                <div class="hero-buttons anim-fade-in-up delay-3">
+                    <a href="cardapio.html" class="btn hero-btn-main anim-glow">
                         Ver Cardápio
                     </a>
-
-                    <a href="#" class="btn hero-btn-outline">
-                        Encomendar
+                    <a href="reservas.html" class="btn hero-btn-outline">
+                        Reservar Mesa
                     </a>
-
                 </div>
 
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 
-            <!-- RESTAURANTES -->
+<!-- ESTATÍSTICAS -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row g-3 justify-content-center">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="stat-card text-center">
+                    <div class="stat-number">
+                        <span data-counter data-target="37" data-suffix="+">0+</span>
+                    </div>
+                    <div class="stat-label">Anos de Tradição</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-card text-center">
+                    <div class="stat-number">
+                        <span data-counter data-target="3" data-suffix="">0</span>
+                    </div>
+                    <div class="stat-label">Restaurantes</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card text-center">
+                    <div class="stat-number">
+                        <span data-counter data-target="500" data-suffix="k+">0k+</span>
+                    </div>
+                    <div class="stat-label">Clientes Satisfeitos</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-card text-center">
+                    <div class="stat-number">
+                        <span data-counter data-target="100" data-suffix="%">0%</span>
+                    </div>
+                    <div class="stat-label">Receitas Artesanais</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <section class="restaurantes">
 
+<!-- RESTAURANTES -->
+<section class="restaurantes">
     <div class="container">
 
-        <div class="text-center mb-5">
-
-            <span class="rest-badge">
-                🍖 As nossas casas
-            </span>
-
-            <h2>
-                Os Nossos Restaurantes
-            </h2>
-
-            <p>
-                Visite uma das nossas localizações e descubra o verdadeiro sabor do pernil tradicional.
-            </p>
-
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="rest-badge">🍖 As nossas casas</span>
+            <h2>Os Nossos Restaurantes</h2>
+            <p>Visite uma das nossas localizações e descubra o verdadeiro sabor do pernil tradicional.</p>
         </div>
 
         <div class="row g-4">
 
-            <!-- Aveiro -->
-            <div class="col-12 col-md-6 col-lg-4">
-
+            <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
                 <div class="card rest-card h-100">
-
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no"
-                        class="card-img-top">
-
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
                     <div class="card-body">
-
                         <h5>Aveiro</h5>
-
-                        <p>
-                            Ambiente acolhedor e sabor inesquecível no coração de Aveiro.
-                        </p>
-
-                        <a href="cardapio.html" class="btn rest-btn">
-                            Ver Cardápio
-                        </a>
-
+                        <p>Ambiente acolhedor e sabor inesquecível no coração de Aveiro.</p>
+                        <a href="cardapio.html" class="btn rest-btn">Ver Cardápio</a>
                     </div>
-
                 </div>
-
             </div>
 
-            <!-- Coimbra -->
-            <div class="col-12 col-md-6 col-lg-4">
-
+            <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
                 <div class="card rest-card h-100">
-
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no"
-                        class="card-img-top">
-
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
                     <div class="card-body">
-
                         <h5>Coimbra</h5>
-
-                        <p>
-                            Tradição e qualidade servidas diariamente em Coimbra.
-                        </p>
-
-                        <a href="cardapio.html" class="btn rest-btn">
-                            Ver Cardápio
-                        </a>
-
+                        <p>Tradição e qualidade servidas diariamente em Coimbra.</p>
+                        <a href="cardapio.html" class="btn rest-btn">Ver Cardápio</a>
                     </div>
-
                 </div>
-
             </div>
 
-            <!-- Viseu -->
-            <div class="col-12 col-md-6 col-lg-4">
-
+            <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="card rest-card h-100">
-
-                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no"
-                        class="card-img-top">
-
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipOfnXxspoIilC5uT7N83YOhzrUlADHZMbV8-VMS=w500-h500-k-no" class="card-img-top">
                     <div class="card-body">
-
                         <h5>Viseu</h5>
-
-                        <p>
-                            O melhor pernil tradicional num espaço moderno e familiar.
-                        </p>
-
-                        <a href="cardapio.html" class="btn rest-btn">
-                            Ver Cardápio
-                        </a>
-
+                        <p>O melhor pernil tradicional num espaço moderno e familiar.</p>
+                        <a href="cardapio.html" class="btn rest-btn">Ver Cardápio</a>
                     </div>
-
                 </div>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
 
 
+<!-- SOBRE NÓS -->
 <section id="sobre-nos">
-
     <div class="sobre-overlay">
-
         <div class="container">
+            <div class="sobre-glass text-center" data-aos="zoom-in">
 
-            <div class="sobre-glass text-center">
-
-                <span class="sobre-badge">
-                    🇵🇹 Tradição Portuguesa
-                </span>
+                <span class="sobre-badge">🇵🇹 Tradição Portuguesa</span>
 
                 <h2>Sobre Nós</h2>
 
-                <p class="sobre-texto">
+                <p class="sobre-texto" data-aos="fade-up" data-aos-delay="100">
                     No <strong>Zé do Pernil</strong>, somos apaixonados pela tradição e pelos
                     sabores autênticos da gastronomia portuguesa. Especializamo-nos na
                     preparação de <strong>pernil suculento</strong> e <strong>leitão crocante</strong>,
                     receitas que carregam história, dedicação e um sabor inconfundível.
                 </p>
 
-                <p class="sobre-texto">
+                <p class="sobre-texto" data-aos="fade-up" data-aos-delay="200">
                     A nossa jornada começou com o objetivo de levar à mesa dos nossos clientes
                     o verdadeiro gosto da comida tradicional, preparada com técnicas artesanais
                     e ingredientes de qualidade.
                 </p>
 
-                <p class="sobre-texto">
+                <p class="sobre-texto" data-aos="fade-up" data-aos-delay="300">
                     Hoje contamos com restaurantes em <strong>Viseu</strong>,
                     <strong>Aveiro</strong> e <strong>Coimbra</strong>, onde diariamente servimos
                     refeições que unem tradição, qualidade e paixão pela boa comida.
                 </p>
 
-                <p class="sobre-texto destaque">
+                <p class="sobre-texto destaque" data-aos="fade-up" data-aos-delay="400">
                     Mais do que um restaurante, o Zé do Pernil é um espaço de convívio,
                     sabor e momentos inesquecíveis.
                 </p>
 
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="500">
+                    <a href="sobre.html" class="btn hero-btn-main">Conhecer a Nossa História</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="0">
+                <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
+                <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <small class="text-muted d-block mt-2 text-center italic">Visite a nossa loja mais próxima</small>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4" data-aos="fade-up" data-aos-delay="100">
+                <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
+                <div class="mb-3">
+                    <strong class="text-white">📍 Viseu</strong><br>
+                    <span class="small text-light">Rua Formosa, nº 45<br>3500-135 Viseu</span>
+                </div>
+                <div class="mb-3">
+                    <strong class="text-white">📍 Aveiro</strong><br>
+                    <span class="small text-light">Rua da Pega, Edifício UA<br>3810-193 Aveiro</span>
+                </div>
+                <div class="mb-3">
+                    <strong class="text-white">📍 Coimbra</strong><br>
+                    <span class="small text-light">Largo da Portagem, nº 12<br>3000-337 Coimbra</span>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
+                <p class="mb-2">📞 +351 234 123 456</p>
+                <p class="mb-2">✉️ geral@zedopernil.pt</p>
+                <p class="mb-3">💬 +351 912 345 678</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-outline-warning btn-sm me-2">Facebook</a>
+                    <a href="#" class="btn btn-outline-warning btn-sm">Instagram</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start" data-aos="fade-up" data-aos-delay="300">
+                <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
+                <p class="mb-1 fw-bold">Segunda a Domingo</p>
+                <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
+                <hr class="border-warning w-25 mx-auto mx-md-0">
+                <p class="small text-muted">Aberto ininterruptamente para o seu almoço e jantar.</p>
             </div>
 
         </div>
 
+        <hr class="bg-secondary opacity-25">
+        <div class="text-center pt-2">
+            <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
+        </div>
     </div>
-
-</section>
-
-        <!--Rodape -->
-        <footer class="bg-dark text-white pt-5 pb-3 ">
-            <div class="container">
-                <div class="row">
-                    
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <h5 class="text-uppercase mb-4 text-warning">Onde Estamos</h5>
-                        <div class="ratio ratio-16x9 shadow-sm border border-secondary rounded">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194844.2423547806!2d-8.73600985!3d40.4001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220970a4a69629%3A0x400ebbde49033a0!2sAveiro!5e0!3m2!1spt-PT!2spt!4v1710000000000!5m2!1spt-PT!2spt" 
-                                style="border:0;" allowfullscreen="" loading="lazy">
-                            </iframe>
-                        </div>
-                        <small class="text-muted d-block mt-2 text-center italic">Visite a nossa loja mais próxima</small>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mb-4 border-start border-secondary ps-4">
-                        <h5 class="text-uppercase mb-4 text-warning">Nossas Lojas</h5>
-                        
-                        
-                        <div class="">
-                            <strong class="text-white">📍 Viseu</strong><br>
-                            <span class="small text-light">Rua Formosa, nº 45<br>3500-135 Viseu</span>
-                        </div>
-
-                        <div class="mb-3">
-                            <strong class="text-white">📍 Aveiro</strong><br>
-                            <span class="small text-light">Rua da Pega, Edifício UA<br>3810-193 Aveiro</span>
-                        </div>
-                        <div class="mb-3">
-                            <strong class="text-white">📍 Coimbra</strong><br>
-                            <span class="small text-light">Largo da Portagem, nº 12<br>3000-337 Coimbra</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
-                        <p class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i> +351 234 123 456</p>
-                        <p class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> geral@zedopernil.pt</p>
-                        <p class="mb-3"><i class="bi bi-whatsapp text-warning me-2"></i> +351 912 345 678</p>
-                        
-                        <div class="mt-4">
-                            <a href="#" class="btn btn-outline-warning btn-sm me-2"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="btn btn-outline-warning btn-sm"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
-                        <h5 class="text-uppercase mb-4 text-warning">Horário</h5>
-                        <p class="mb-1 fw-bold">Segunda a Domingo</p>
-                        <p class="display-6 fs-4 text-white">12:00 — 22:30</p>
-                        <hr class="border-warning w-25 mx-auto mx-md-0">
-                        <p class="small text-muted">Aberto ininterruptamente para o seu almoço e jantar.</p>
-                    </div>
-
-                </div>
-
-                <hr class="bg-secondary opacity-25">
-
-                <div class="text-center pt-2">
-                    <p class="mb-0 text-muted small">© 2026 <strong>Zé do Pernil</strong> | <span class="text-white">Rómulo Monteiro</span></p>
-                </div>
-            </div>
-        </footer>
+</footer>
 
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'pt',
-                    autoDisplay: false
-                }, 'google_translate_element');
-            }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/animations.js"></script>
 
-            function doGTranslate(lang_pair) {
-                if (lang_pair.value) lang_pair = lang_pair.value;
-                if (lang_pair == '') return;
-                var lang = lang_pair.split('|')[1];
-                var teCombo = document.querySelector('.goog-te-combo');
-                if (teCombo == null || teCombo.innerHTML == null) {
-                    setTimeout(function() { doGTranslate(lang_pair); }, 500);
-                } else {
-                    teCombo.value = lang;
-                    teCombo.dispatchEvent(new Event('change'));
-                }
-            }
-        </script>
-        
-        <script>
-            /*script para quando eu clicar em qualquer lugar com o menu hamburger aberto ele ele fecha sozinho */
-document.addEventListener("DOMContentLoaded", function () {
-
-const menu = document.getElementById("menu");
-const toggler = document.querySelector(".navbar-toggler");
-
-document.addEventListener("click", function (e) {
-
-const clicouNoMenu = menu.contains(e.target);
-const clicouNoBotao = toggler.contains(e.target);
-
-const aberto = menu.classList.contains("show");
-
-if (aberto && !clicouNoMenu && !clicouNoBotao) {
-
-const bsCollapse = bootstrap.Collapse.getInstance(menu) 
-|| new bootstrap.Collapse(menu, {toggle:false});
-
-bsCollapse.hide();
-
-}
-
-});
-
-});
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'pt', autoDisplay: false }, 'google_translate_element');
+    }
+    function doGTranslate(lang_pair) {
+        if (lang_pair.value) lang_pair = lang_pair.value;
+        if (lang_pair == '') return;
+        var lang = lang_pair.split('|')[1];
+        var teCombo = document.querySelector('.goog-te-combo');
+        if (teCombo == null || teCombo.innerHTML == null) {
+            setTimeout(function () { doGTranslate(lang_pair); }, 500);
+        } else {
+            teCombo.value = lang;
+            teCombo.dispatchEvent(new Event('change'));
+        }
+    }
 </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        </body>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-        </html>
+</body>
+</html>
