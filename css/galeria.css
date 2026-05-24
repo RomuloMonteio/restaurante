@@ -277,4 +277,11 @@ body {
     .galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     #lightbox-prev { left: 8px; }
     #lightbox-next { right: 8px; }
+    #lightbox-caption {
+        white-space: normal;
+        text-align: center;
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

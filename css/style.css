@@ -25,16 +25,9 @@ height:auto;
 display:block;
 }
 
-/* bootstrap rows às vezes causam overflow */
+/* impede overflow nas rows sem quebrar a grelha Bootstrap */
 .row{
-margin-left:0 !important;
-margin-right:0 !important;
-}
-
-/* evita elementos a sair do ecrã */
-.container,
-.container-fluid{
-overflow-x:hidden;
+max-width:100%;
 }
 
 /* impede zoom automático em inputs iPhone */
@@ -191,9 +184,31 @@ object-fit:cover;
 @media(max-width:991px){
 
     .navbar .container{
-        margin: 0px 5%;
+        margin: 0 4%;
+        padding: 10px 18px;
     }
 
+    /* menu expandido: limita altura e permite scroll vertical */
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        max-height: calc(100svh - 100px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* bandeiras: centradas no mobile */
+    .navbar .d-flex.align-items-center {
+        justify-content: center;
+        padding: 8px 0 4px;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    /* links menores no mobile */
+    .navbar-nav .nav-link{
+        padding: 10px 14px !important;
+        font-size: 15px;
+    }
 }
 
 /*Fim Nav Bar*/
