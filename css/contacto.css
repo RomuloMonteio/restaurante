@@ -3,7 +3,7 @@
 =========================== */
 
 body {
-    background: linear-gradient(135deg, #120804, #2b1308, #1a0c05);
+    background: linear-gradient(135deg, #080808, #0f0f0f, #0a0a0a);
     min-height: 100vh;
     color: #fff5e8;
 }
@@ -21,7 +21,7 @@ body {
     position: absolute;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(209,138,31,.12), transparent 70%);
+    background: radial-gradient(circle, rgba(201,168,76,.15), transparent 70%);
     top: -100px; left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
@@ -95,23 +95,23 @@ body {
 
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0,0,0,.35), 0 0 25px rgba(209,138,31,.12);
+    box-shadow: 0 20px 45px rgba(0,0,0,.35), 0 0 25px rgba(201,168,76,.12);
 }
 
 .contact-icon {
     width: 64px; height: 64px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #8b2d04, #d18a1f);
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 18px;
     font-size: 26px;
-    box-shadow: 0 8px 20px rgba(209,138,31,.3);
+    box-shadow: 0 8px 20px rgba(201,168,76,.3);
     transition: .3s ease;
 }
 
 .contact-card:hover .contact-icon {
     transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 12px 28px rgba(209,138,31,.45);
+    box-shadow: 0 12px 28px rgba(201,168,76,.45);
 }
 
 .contact-card h5 {
@@ -151,7 +151,7 @@ body {
 
 .loja-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0,0,0,.32), 0 0 20px rgba(209,138,31,.10);
+    box-shadow: 0 18px 40px rgba(0,0,0,.32), 0 0 20px rgba(201,168,76,.10);
 }
 
 .loja-badge {
@@ -160,10 +160,10 @@ body {
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
-    background: linear-gradient(135deg, #8b2d04, #d18a1f);
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
     color: #fff;
     margin-bottom: 14px;
-    box-shadow: 0 4px 12px rgba(209,138,31,.25);
+    box-shadow: 0 4px 12px rgba(201,168,76,.25);
 }
 
 .loja-card h5 {
@@ -197,7 +197,7 @@ body {
     margin: 0 auto;
     padding: 50px 44px;
     border-radius: 32px;
-    background: rgba(95,45,10,.18);
+    background: rgba(255,255,255,.05);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,.12);
@@ -265,8 +265,8 @@ body {
 .form-contact-wrap textarea:focus,
 .form-contact-wrap select:focus {
     background: rgba(255,255,255,.12);
-    border-color: rgba(209,138,31,.5);
-    box-shadow: 0 0 0 3px rgba(209,138,31,.12), 0 0 20px rgba(209,138,31,.08);
+    border-color: rgba(201,168,76,.5);
+    box-shadow: 0 0 0 3px rgba(201,168,76,.12), 0 0 20px rgba(201,168,76,.08);
 }
 
 .form-contact-wrap textarea {
@@ -282,8 +282,8 @@ body {
     font-weight: 700;
     font-size: 17px;
     color: #fff;
-    background: linear-gradient(135deg, #8b2d04, #d18a1f);
-    box-shadow: 0 10px 25px rgba(209,138,31,.35);
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
+    box-shadow: 0 10px 25px rgba(201,168,76,.35);
     transition: .35s ease;
     cursor: pointer;
     margin-top: 8px;
@@ -293,7 +293,7 @@ body {
 
 .btn-contact-submit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 35px rgba(209,138,31,.5);
+    box-shadow: 0 16px 35px rgba(201,168,76,.5);
 }
 
 .btn-contact-submit .btn-text { transition: opacity .2s; }
@@ -328,7 +328,7 @@ body {
 
 .horario-row:last-child { border-bottom: none; }
 .horario-row .dia { font-weight: 600; color: #fff5e8; }
-.horario-row .hora { color: #ffd9a0; font-weight: 700; }
+.horario-row .hora { color: #c9a84c; font-weight: 700; }
 
 @media(max-width:768px) {
     .form-contact-wrap { padding: 32px 22px; }

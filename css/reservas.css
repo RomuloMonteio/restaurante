@@ -3,7 +3,7 @@
 =========================== */
 
 body {
-    background: linear-gradient(135deg, #120804, #2b1308, #1a0c05);
+    background: linear-gradient(135deg, #080808, #0f0f0f, #0a0a0a);
     min-height: 100vh;
     color: #fff5e8;
 }
@@ -21,7 +21,7 @@ body {
     position: absolute;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(209,138,31,.12), transparent 70%);
+    background: radial-gradient(circle, rgba(201,168,76,.15), transparent 70%);
     top: -100px; left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
@@ -68,7 +68,7 @@ body {
     margin: 0 auto;
     padding: 52px 48px;
     border-radius: 34px;
-    background: rgba(95,45,10,.20);
+    background: rgba(255,255,255,.05);
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
     border: 1px solid rgba(255,255,255,.13);
@@ -126,12 +126,12 @@ body {
 
 .form-input-custom:focus {
     background: rgba(255,255,255,.12);
-    border-color: rgba(209,138,31,.55);
-    box-shadow: 0 0 0 3px rgba(209,138,31,.12), 0 0 22px rgba(209,138,31,.08);
+    border-color: rgba(201,168,76,.55);
+    box-shadow: 0 0 0 3px rgba(201,168,76,.12), 0 0 22px rgba(201,168,76,.08);
 }
 
 .form-input-custom option {
-    background: #2b1308;
+    background: #0f0f0f;
     color: #fff5e8;
 }
 
@@ -151,7 +151,7 @@ body {
     width: 36px; height: 36px;
     border-radius: 50%;
     border: none;
-    background: linear-gradient(135deg, #8b2d04, #d18a1f);
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -163,7 +163,7 @@ body {
 
 .pessoas-btn:hover {
     transform: scale(1.12);
-    box-shadow: 0 4px 12px rgba(209,138,31,.4);
+    box-shadow: 0 4px 12px rgba(201,168,76,.4);
 }
 
 .pessoas-count {
@@ -188,8 +188,8 @@ body {
     font-weight: 700;
     font-size: 17px;
     color: #fff;
-    background: linear-gradient(135deg, #8b2d04, #d18a1f);
-    box-shadow: 0 10px 25px rgba(209,138,31,.35);
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
+    box-shadow: 0 10px 25px rgba(201,168,76,.35);
     transition: .35s ease;
     cursor: pointer;
     margin-top: 10px;
@@ -199,7 +199,7 @@ body {
 
 .btn-reserva-submit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 38px rgba(209,138,31,.52);
+    box-shadow: 0 18px 38px rgba(201,168,76,.52);
 }
 
 .btn-reserva-submit .btn-text { transition: opacity .2s; }
@@ -260,7 +260,7 @@ body {
 
 .info-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 38px rgba(0,0,0,.3), 0 0 18px rgba(209,138,31,.10);
+    box-shadow: 0 18px 38px rgba(0,0,0,.3), 0 0 18px rgba(201,168,76,.10);
 }
 
 .info-card-icon {

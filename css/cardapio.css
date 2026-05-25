@@ -7,7 +7,7 @@
 body{
 
 background:
-linear-gradient(135deg,#120804,#2b1308,#1a0c05);
+linear-gradient(135deg,#080808,#0f0f0f,#0a0a0a);
 
 color:#fff;
 min-height:100vh;
@@ -73,12 +73,12 @@ box-shadow:
 .nav-pills .nav-link.active{
 
 background:
-linear-gradient(135deg,#8b2d04,#d18a1f);
+linear-gradient(135deg,#7a5c1a,#c9a84c);
 
 color:#fff !important;
 
 box-shadow:
-0 10px 22px rgba(209,138,31,.30);
+0 10px 22px rgba(201,168,76,.30);
 }
 
 /* =========================
@@ -133,7 +133,7 @@ transform:translateY(-10px) scale(1.02);
 
 box-shadow:
 0 20px 40px rgba(0,0,0,.35),
-0 0 22px rgba(209,138,31,.12);
+0 0 22px rgba(201,168,76,.12);
 }
 
 /* imagens todas iguais */
@@ -174,7 +174,7 @@ color:#ffbc67 !important;
 border:none;
 border-radius:30px;
 
-background:rgba(28,14,8,.95);
+background:rgba(10,10,10,.96);
 
 backdrop-filter:blur(18px);
 
@@ -223,7 +223,7 @@ border-radius:18px;
 font-weight:700;
 
 background:
-linear-gradient(135deg,#8b2d04,#d18a1f);
+linear-gradient(135deg,#7a5c1a,#c9a84c);
 }
 
 /* =========================

@@ -3,7 +3,7 @@
 =========================== */
 
 body {
-    background: linear-gradient(135deg, #120804, #2b1308, #1a0c05);
+    background: linear-gradient(135deg, #080808, #0f0f0f, #0a0a0a);
     min-height: 100vh;
     color: #fff5e8;
 }
@@ -20,7 +20,7 @@ body {
     position: absolute;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(209,138,31,.12), transparent 70%);
+    background: radial-gradient(circle, rgba(201,168,76,.15), transparent 70%);
     top: -100px; left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
@@ -81,10 +81,10 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: linear-gradient(135deg, #8b2d04, #d18a1f);
+    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
     border-color: transparent;
     color: #fff;
-    box-shadow: 0 6px 18px rgba(209,138,31,.35);
+    box-shadow: 0 6px 18px rgba(201,168,76,.35);
     transform: translateY(-2px);
 }
 
@@ -117,7 +117,7 @@ body {
 
 .galeria-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0,0,0,.4), 0 0 20px rgba(209,138,31,.12);
+    box-shadow: 0 18px 40px rgba(0,0,0,.4), 0 0 20px rgba(201,168,76,.12);
 }
 
 .galeria-item:hover img {
@@ -188,7 +188,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: 99990;
-    background: rgba(10,5,2,.96);
+    background: rgba(5,5,5,.97);
     backdrop-filter: blur(12px);
     display: none;
     align-items: center;

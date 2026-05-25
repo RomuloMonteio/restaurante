@@ -43,8 +43,8 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 10px 25px rgba(209,138,31,.35); }
-  50%       { box-shadow: 0 10px 40px rgba(209,138,31,.65), 0 0 60px rgba(209,138,31,.20); }
+  0%, 100% { box-shadow: 0 10px 25px rgba(201,168,76,.35); }
+  50%       { box-shadow: 0 10px 40px rgba(201,168,76,.65), 0 0 60px rgba(201,168,76,.20); }
 }
 
 @keyframes heroBadgePop {
@@ -187,7 +187,7 @@
   right: 18px;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #8b2d04, #d18a1f);
+  background: linear-gradient(90deg, #7a5c1a, #c9a84c);
   animation: fadeIn .3s ease;
 }
 
@@ -230,11 +230,11 @@
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #8b2d04, #d18a1f, #ffd9a0);
+  background: linear-gradient(90deg, #7a5c1a, #c9a84c, #e8d080);
   z-index: 9999;
   width: 0%;
   transition: width .1s linear;
-  box-shadow: 0 0 10px rgba(209,138,31,.6);
+  box-shadow: 0 0 10px rgba(201,168,76,.6);
 }
 
 /* =================================
@@ -245,7 +245,7 @@
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: linear-gradient(135deg, #120804, #2b1308, #1a0c05);
+  background: linear-gradient(135deg, #080808, #0f0f0f, #0a0a0a);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,7 +270,7 @@
 }
 
 .loading-logo span {
-  color: #d18a1f;
+  color: #c9a84c;
 }
 
 .loading-bar-wrap {
@@ -285,9 +285,9 @@
 .loading-bar {
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, #8b2d04, #d18a1f);
+  background: linear-gradient(90deg, #7a5c1a, #c9a84c);
   animation: loadBarFill 1s .4s ease both;
-  box-shadow: 0 0 12px rgba(209,138,31,.5);
+  box-shadow: 0 0 12px rgba(201,168,76,.5);
 }
 
 /* =================================
@@ -298,7 +298,7 @@
   position: fixed;
   inset: 0;
   z-index: 88888;
-  background: linear-gradient(135deg, #120804, #2b1308);
+  background: linear-gradient(135deg, #080808, #0f0f0f);
   pointer-events: none;
   opacity: 0;
   transition: opacity .28s ease;
