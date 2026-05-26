@@ -1,0 +1,360 @@
+{
+  "categorias": [
+    {
+      "id": "leitao",
+      "label": "Leitão",
+      "ativo": true,
+      "produtos": [
+        {
+          "nome": "Sandes Leitão",
+          "preco": "5.70€",
+          "img": "https://media-cdn.tripadvisor.com/media/photo-s/1b/1d/63/21/ze-do-pernil-lanche-delicioso.jpg",
+          "desc": "Sandes tradicional de leitão assado com molho especial da casa"
+        },
+        {
+          "nome": "Sandes Leitão c/ Queijo Ovelha",
+          "preco": "6.70€",
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT713De8TrKia_93vKQaJIs1ANCeatzRJomiA&s",
+          "desc": "Sandes de leitão assado com queijo de ovelha curado, uma combinação irresistível"
+        },
+        {
+          "nome": "Prato de Leitão",
+          "preco": "11.00€",
+          "img": "https://d1ralsognjng37.cloudfront.net/04f5ffc5-73d2-4ae4-99de-fc4f4e11d0ec.jpeg",
+          "desc": "Prato generoso de leitão assado com acompanhamento da casa"
+        },
+        {
+          "nome": "Prato c/ Batata Caseira",
+          "preco": "12.00€",
+          "img": "https://d1ralsognjng37.cloudfront.net/04f5ffc5-73d2-4ae4-99de-fc4f4e11d0ec.jpeg",
+          "desc": "Prato de leitão assado com batata caseira e acompanhamento tradicional"
+        },
+        {
+          "nome": "Leitão ao Kg",
+          "preco": "45.00€/kg",
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s",
+          "desc": "Leitão assado vendido ao quilo, ideal para partilhar em família"
+        },
+        {
+          "nome":"Leitao Inteiro",
+          "preco":"150.00€",
+          "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s",
+          "desc":"Leitao Inteiro assado"
+        },
+        {
+          "nome": "Meio Leitão",
+          "preco": "80.00€",
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hCuCWmIG_BJSgdcYopUbCQtoiWrkgsLeiA&s",
+          "desc": "Meia peça de leitão assado"
+        }
+      ]
+    },
+    {
+      "id": "pernil",
+      "label": "Pernil",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Sandes Pernil",
+          "preco": "4.20€",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Sandes de pernil suculento com tempero especial da casa"
+        },
+        {
+          "nome": "Sandes Pernil c/ Queijo",
+          "preco": "5.20€",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Pernil suculento com queijo de ovelha fundido"
+        },
+        {
+          "nome": "Sandes Pernil c/ Presunto",
+          "preco": "6.21€",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Pernil com presunto serrano da região"
+        },
+        {
+          "nome": "Sandes Pernil c/ Paio Lombo",
+          "preco": "6.21€",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Pernil com paio de lombo artesanal"
+        },
+        {
+          "nome": "Sandes Pernil c/ Ovo",
+          "preco": "6.86€",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Pernil com ovo estrelado, sabor intenso e reconfortante"
+        },
+        {
+          "nome": "Sandes Pernil c/ Presunto e Ovo",
+          "preco": "8.26€",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Pernil com presunto serrano e ovo estrelado, a combinação perfeita"
+        },
+        {
+          "nome": "Pernil ao Kg",
+          "preco": "35.00€/kg",
+          "img": "https://lh3.googleusercontent.com/p/AF1QipOxbL6-3PIyHK4wy7IoNQS7zrjJ3dKPSfXmNcwS=w1280-h1280-no",
+          "desc": "Pernil assado ao quilo, ideal para grupos e celebrações"
+        }
+      ]
+    },
+    {
+      "id": "pregos",
+      "label": "Pregos",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Prego da Casa",
+          "preco": "6.72€",
+          "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80",
+          "desc": "Prego artesanal com marinada especial da casa, tenro e saboroso"
+        },
+        {
+          "nome": "Prego c/ Queijo Ovelha",
+          "preco": "7.98€",
+          "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80",
+          "desc": "Prego da casa com queijo de ovelha curado derretido"
+        },
+        {
+          "nome": "Prego Especial",
+          "preco": "7.98€",
+          "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80",
+          "desc": "Prego especial com ingredientes selecionados pelo Chef"
+        },
+        {
+          "nome": "Prego c/ Presunto",
+          "preco": "7.98€",
+          "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80",
+          "desc": "Prego da casa com presunto serrano"
+        },
+        {
+          "nome": "Prego c/ Presunto e Ovo",
+          "preco": "9.38€",
+          "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80",
+          "desc": "Prego completo com presunto serrano e ovo estrelado"
+        }
+      ]
+    },
+    {
+      "id": "tapas",
+      "label": "Tapas",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Tábua Mista",
+          "preco": "12.15€",
+          "img": "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=400&q=80",
+          "desc": "Tábua de enchidos e queijos selecionados da nossa região, acompanhada de pão artesanal"
+        },
+        {
+          "nome": "Presunto 100g",
+          "preco": "5.20€",
+          "img": "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=400&q=80",
+          "desc": "Presunto serrano cortado na hora, 100g — intenso e curado"
+        }
+      ]
+    },
+    {
+      "id": "sandes",
+      "label": "Sandes & Extras",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Sandes Queijo",
+          "preco": "4.72€",
+          "img": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&q=80",
+          "desc": "Sandes com queijo curado da região"
+        },
+        {
+          "nome": "Sandes Paio Lombo",
+          "preco": "4.72€",
+          "img": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&q=80",
+          "desc": "Sandes com paio de lombo artesanal"
+        },
+        {
+          "nome": "Sandes Presunto",
+          "preco": "4.72€",
+          "img": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&q=80",
+          "desc": "Sandes com presunto serrano, simples e deliciosa"
+        },
+        {
+          "nome": "Sandes Presunto e Ovo",
+          "preco": "5.04€",
+          "img": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&q=80",
+          "desc": "Sandes com presunto e ovo estrelado"
+        },
+        {
+          "nome": "Sandes Paio e Ovo",
+          "preco": "6.44€",
+          "img": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&q=80",
+          "desc": "Sandes com paio de lombo e ovo estrelado"
+        },
+        {
+          "nome": "Sopa do Dia",
+          "preco": "2.60€",
+          "img": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80",
+          "desc": "Sopa do dia, feita com ingredientes frescos e receita tradicional"
+        },
+        {
+          "nome": "Batatas",
+          "preco": "1.30€",
+          "img": "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&q=80",
+          "desc": "Batatas fritas caseiras, acompanhamento perfeito"
+        },
+        {
+          "nome": "Pão",
+          "preco": "1.00€",
+          "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80",
+          "desc": "Pão artesanal da casa, estaladiço por fora e macio por dentro"
+        }
+      ]
+    },
+    {
+      "id": "cervejas",
+      "label": "Cervejas & Bebidas",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Super Bock",
+          "preco": "2.16€",
+          "img": "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&q=80",
+          "desc": "Super Bock em garrafa, bem geladinha e refrescante"
+        },
+        {
+          "nome": "Super Bock Sem Álcool",
+          "preco": "2.16€",
+          "img": "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=400&q=80",
+          "desc": "Super Bock sem álcool — ideal para quem conduz"
+        },
+        {
+          "nome": "Pepsi",
+          "preco": "2.16€",
+          "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80",
+          "desc": "Pepsi gelada e refrescante"
+        },
+        {
+          "nome": "Sumol",
+          "preco": "2.16€",
+          "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80",
+          "desc": "Sumol de laranja ou ananás, bem fresco"
+        },
+        {
+          "nome": "Ice Tea",
+          "preco": "2.16€",
+          "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80",
+          "desc": "Ice Tea gelado, perfeito para acompanhar a refeição"
+        },
+        {
+          "nome": "Água",
+          "preco": "1.30€",
+          "img": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&q=80",
+          "desc": "Água mineral natural ou com gás"
+        }
+      ]
+    },
+    {
+      "id": "vinhos",
+      "label": "Vinhos",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Ribeiro Santo Branco",
+          "preco": "9.10€",
+          "img": "https://images.unsplash.com/photo-1560712754-6e1b68059b85?w=400&q=80",
+          "desc": "Vinho branco da Bairrada, fresco, aromático e elegante"
+        },
+        {
+          "nome": "Montes Ermos Branco",
+          "preco": "9.10€",
+          "img": "https://images.unsplash.com/photo-1560712754-6e1b68059b85?w=400&q=80",
+          "desc": "Vinho branco do Dão, equilibrado e de grande frescura"
+        },
+        {
+          "nome": "Porta 6 Tinto",
+          "preco": "11.20€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Vinho tinto fácil de beber, frutado e suave, do Tejo"
+        },
+        {
+          "nome": "Casa de Santar Tinto",
+          "preco": "12.50€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Vinho tinto do Dão com estrutura, elegância e persistência"
+        },
+        {
+          "nome": "Reguengos Tinto",
+          "preco": "13.80€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Vinho tinto encorpado do Alentejo, intenso e aveludado"
+        },
+        {
+          "nome": "Quinta dos Carvalhos Tinto",
+          "preco": "15.40€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Vinho tinto da Bairrada, com notas de frutos vermelhos e especiarias"
+        },
+        {
+          "nome": "Cartuxa Tinto",
+          "preco": "18.20€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Vinho tinto do Alentejo, complexo, persistente e de grande classe"
+        },
+        {
+          "nome": "Herdade do Esporão Reserva",
+          "preco": "21.50€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Reserva premium do Alentejo, intenso, elegante e muito persistente"
+        },
+        {
+          "nome": "Barca Velha",
+          "preco": "24.80€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Ícone do Douro, vinho lendário de carácter extraordinário"
+        },
+        {
+          "nome": "Meandro Vale Meão",
+          "preco": "27.30€",
+          "img": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80",
+          "desc": "Vinho tinto de autor do Douro Superior, excecional e memorável"
+        }
+      ]
+    },
+    {
+      "id": "espumantes",
+      "label": "Espumantes",
+      "ativo": false,
+      "produtos": [
+        {
+          "nome": "Murganheira Bruto",
+          "preco": "15.40€",
+          "img": "https://images.unsplash.com/photo-1564419431617-11e5d67ed3ee?w=400&q=80",
+          "desc": "Espumante natural bruto da Bairrada, leve, fresco e com borbulhas finas"
+        },
+        {
+          "nome": "Távora Varosa Bruto",
+          "preco": "15.40€",
+          "img": "https://images.unsplash.com/photo-1564419431617-11e5d67ed3ee?w=400&q=80",
+          "desc": "Espumante da sub-região Távora-Varosa, elegante e persistente"
+        },
+        {
+          "nome": "Aliança Bruto",
+          "preco": "15.80€",
+          "img": "https://images.unsplash.com/photo-1564419431617-11e5d67ed3ee?w=400&q=80",
+          "desc": "Espumante bruto com frescura, elegância e notas cítricas"
+        },
+        {
+          "nome": "Raposeira Bruto",
+          "preco": "16.20€",
+          "img": "https://images.unsplash.com/photo-1564419431617-11e5d67ed3ee?w=400&q=80",
+          "desc": "Espumante clássico português, referência do mercado nacional"
+        },
+        {
+          "nome": "Casa de Santar Espumante",
+          "preco": "16.80€",
+          "img": "https://images.unsplash.com/photo-1564419431617-11e5d67ed3ee?w=400&q=80",
+          "desc": "Espumante premium com notas de frutas brancas e brioche"
+        }
+      ]
+    }
+  ]
+}
