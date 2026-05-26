@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /tmp/style_top.css /home/romy/Documentos/GitHub/restaurante/css/style.css && echo \"OK\" && wc -l /home/romy/Documentos/GitHub/restaurante/css/style.css)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}

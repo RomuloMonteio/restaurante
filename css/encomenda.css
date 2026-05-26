@@ -7,8 +7,8 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg, #080808, #0f0f0f, #0a0a0a);
-    color: #fff5e8;
+    background: linear-gradient(135deg, #000000, #0D0D0D, #000000);
+    color: #FFFFFF;
     overflow-x: hidden;
 }
 
@@ -30,7 +30,7 @@ body {
 
 .blob-1 {
     width: 420px; height: 420px;
-    background: radial-gradient(circle, #c9a84c, #7a5c1a);
+    background: radial-gradient(circle, #D4AF37, #8a6d1e);
     top: -80px; left: -100px;
     animation: blobFloat1 14s ease-in-out infinite;
 }
@@ -44,7 +44,7 @@ body {
 
 .blob-3 {
     width: 260px; height: 260px;
-    background: radial-gradient(circle, #c9a84c, #8a6a20);
+    background: radial-gradient(circle, #D4AF37, #8a6a20);
     top: 40%; left: 60%;
     animation: blobFloat3 22s ease-in-out infinite;
 }
@@ -91,7 +91,7 @@ body {
     max-width: 620px;
     padding: 48px 44px;
     border-radius: 34px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(26, 26, 26, 0.92);
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
     border: 1px solid rgba(255, 255, 255, 0.13);
@@ -119,7 +119,7 @@ body {
     border-radius: 20px;
     font-size: 13px;
     font-weight: 700;
-    color: #ffd9a0;
+    color: #F5C542;
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.13);
     margin-bottom: 16px;
@@ -129,13 +129,13 @@ body {
 .enc-card h2 {
     font-size: 30px;
     font-weight: 800;
-    color: #fff5e8;
+    color: #FFFFFF;
     margin-bottom: 6px;
 }
 
 .enc-card .enc-sub {
     font-size: 14px;
-    color: rgba(255, 238, 220, 0.58);
+    color: #8A8A8A;
     margin-bottom: 28px;
 }
 
@@ -157,9 +157,9 @@ body {
     width: 100%;
     padding: 13px 16px;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(38, 38, 38, 0.90);
     border: 1px solid rgba(255, 255, 255, 0.11);
-    color: #fff5e8;
+    color: #FFFFFF;
     font-size: 15px;
     font-family: inherit;
     outline: none;
@@ -183,7 +183,7 @@ body {
 
 .enc-select option {
     background: #0f0f0f;
-    color: #fff5e8;
+    color: #FFFFFF;
 }
 
 .enc-textarea {
@@ -233,7 +233,7 @@ body {
 .preco-display .preco-valor {
     font-size: 22px;
     font-weight: 800;
-    background: linear-gradient(135deg, #c9a84c, #e8d080);
+    background: linear-gradient(135deg, #D4AF37, #F5C542);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -272,7 +272,7 @@ body {
     font-weight: 700;
     font-size: 17px;
     color: #fff;
-    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
+    background: linear-gradient(135deg, #8a6d1e, #D4AF37);
     box-shadow: 0 10px 25px rgba(201, 168, 76, 0.35);
     transition: 0.35s ease;
     cursor: pointer;
@@ -311,13 +311,13 @@ body {
 .enc-success h4 {
     font-size: 24px;
     font-weight: 800;
-    color: #fff5e8;
+    color: #FFFFFF;
     margin-bottom: 8px;
 }
 
 .enc-success p {
     font-size: 14px;
-    color: rgba(255, 238, 220, 0.65);
+    color: #D4D4D4;
     margin-bottom: 22px;
     line-height: 1.6;
 }
@@ -328,7 +328,7 @@ body {
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.06);
-    color: #fff5e8;
+    color: #FFFFFF;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
@@ -362,7 +362,7 @@ body {
 
 /* CABEÇALHO DO COMPROVATIVO */
 .comp-header {
-    background: linear-gradient(135deg, #7a5c1a, #c9a84c);
+    background: linear-gradient(135deg, #8a6d1e, #D4AF37);
     padding: 24px 28px 20px;
     text-align: center;
 }
@@ -447,14 +447,14 @@ body {
 
 .comp-chave {
     font-size: 13px;
-    color: rgba(255, 238, 220, 0.50);
+    color: #8A8A8A;
     font-weight: 500;
     flex-shrink: 0;
 }
 
 .comp-valor {
     font-size: 13px;
-    color: #fff5e8;
+    color: #FFFFFF;
     font-weight: 600;
     text-align: right;
     word-break: break-word;
@@ -485,7 +485,7 @@ body {
 .comp-total-valor {
     font-size: 26px;
     font-weight: 800;
-    background: linear-gradient(135deg, #c9a84c, #e8d080);
+    background: linear-gradient(135deg, #D4AF37, #F5C542);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -500,7 +500,7 @@ body {
 
 .comp-footer p {
     font-size: 12px;
-    color: rgba(255, 238, 220, 0.50);
+    color: #8A8A8A;
     margin: 0 0 4px;
     line-height: 1.6;
 }
@@ -542,7 +542,7 @@ body {
     }
 
     .comp-header {
-        background: #7a5c1a !important;
+        background: #8a6d1e !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -553,11 +553,11 @@ body {
 
     .comp-chave { color: #666 !important; }
     .comp-valor { color: #111 !important; }
-    .comp-secao-titulo { color: #7a5c1a !important; }
+    .comp-secao-titulo { color: #8a6d1e !important; }
 
     .comp-total-valor {
-        -webkit-text-fill-color: #7a5c1a !important;
-        color: #7a5c1a !important;
+        -webkit-text-fill-color: #8a6d1e !important;
+        color: #8a6d1e !important;
     }
 
     .comp-footer p,
