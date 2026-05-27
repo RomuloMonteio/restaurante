@@ -97,18 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     counters.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- PARALLAX HERO ---------- */
-  var hero = document.querySelector('.hero');
-  if (hero) {
-    window.addEventListener('scroll', function () {
-      var scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        hero.style.backgroundPositionY = (50 + scrollY * 0.18) + '%';
-      }
-    }, { passive: true });
-  }
-
-  /* ---------- PAGE TRANSITIONS ---------- */
+/* ---------- PAGE TRANSITIONS ---------- */
   var overlay = document.getElementById('page-transition');
   if (overlay) {
     document.querySelectorAll('a[href]').forEach(function (link) {
