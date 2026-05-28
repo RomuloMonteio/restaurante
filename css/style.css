@@ -1,3 +1,24 @@
+/* NIAGARA SOLID — font local */
+@font-face {
+    font-family: 'Niagara Solid';
+    src: url('../fonts/NIAGSOL.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* aplicar a todos os títulos e logo */
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.hero-title,
+.section-header h2,
+.restaurantes h2,
+.sobre-content h2,
+.esp-body h4,
+.rest-card-body h5 {
+    font-family: 'Niagara Solid', serif;
+}
+
 /* RESET TOTAL */
 html,body{
 margin:0;
@@ -5,7 +26,8 @@ padding:0;
 width:100%;
 max-width:100%;
 overflow-x:hidden;     /* impede scroll lateral */
-touch-action:pan-y;    /* só scroll vertical */
+touch-action:pan-y;    
+/* só scroll vertical */
 }
 
 /* todas secções */
